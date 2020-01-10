@@ -1,0 +1,35 @@
+# i18n_es.messages
+#
+# Copyright (c) 2019 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+########################################### Feature: sponsor muestra un banner comercial.
+sponsor.commercialBanner.form.label.picture = Imagen:
+sponsor.commercialBanner.form.label.slogan = Eslogan:
+sponsor.commercialBanner.form.label.url = URL:
+sponsor.commercialBanner.form.label.holder = Titular:
+sponsor.commercialBanner.form.label.expirationMonth = Mes de expiración:
+sponsor.commercialBanner.form.label.expirationYear = Anyo de expiración:
+sponsor.commercialBanner.form.label.creditCardNumber = Número de tarjeta de crédito:
+sponsor.commercialBanner.form.label.brand = Marca:
+sponsor.commercialBanner.form.label.CVV = CVV:
+
+sponsor.commercialBanner.form.button.create = Crear banner comercial 
+sponsor.commercialBanner.form.button.update = Actualizar banner comercial
+sponsor.commercialBanner.form.button.delete = Borrar banner comercial
+
+sponsor.commercialBanner.form.button.return = Volver
+
+sponsor.commercialBanner.error.spam = Este cuadro de texto contiene spam
+
+sponsor.commercialBanner.creditCardText = Debes tener una tarjeta de crédito para crear un banner comercial
+sponsor.commercialBanner.form.button.add-creditCard = Añadir tarjeta de crédito
+
+########################################### Feature: sponsor lista banners comerciales.
+sponsor.commercialBanner.list.label.slogan = Eslogan
+sponsor.commercialBanner.list.label.url = URL
