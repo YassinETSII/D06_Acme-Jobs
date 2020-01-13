@@ -20,11 +20,11 @@ import lombok.Setter;
 @Setter
 public class Duty extends DomainEntity {
 
-	// Serialisation identifier
+	// Serialisation identifier -----------------------------------------------
 
 	private static final long	serialVersionUID	= 1L;
 
-	// Attributes
+	// Attributes -------------------------------------------------------------
 
 	@NotBlank
 	private String				title;
@@ -38,7 +38,7 @@ public class Duty extends DomainEntity {
 	@Max(100)
 	private Integer				timePercentage;
 
-	// Relationships
+	// Relationships ------------------------------------------------------------
 
 	@NotNull
 	@Valid

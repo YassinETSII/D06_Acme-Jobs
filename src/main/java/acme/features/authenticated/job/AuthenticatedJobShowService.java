@@ -27,11 +27,11 @@ public class AuthenticatedJobShowService implements AbstractShowService<Authenti
 		assert request != null;
 
 		boolean result;
-		int jobId;
+		int idJob;
 		Job job;
 
-		jobId = request.getModel().getInteger("id");
-		job = this.repository.findOneJobById(jobId);
+		idJob = request.getModel().getInteger("id");
+		job = this.repository.findOneJobById(idJob);
 		result = job.isFinalMode() == true;
 
 		return result;
@@ -44,7 +44,7 @@ public class AuthenticatedJobShowService implements AbstractShowService<Authenti
 		assert model != null;
 
 		request.unbind(entity, model, "reference", "title", "deadline");
-		request.unbind(entity, model, "salary", "moreInfo", "description");
+		request.unbind(entity, model, "salary", "description", "moreInfo");
 
 	}
 

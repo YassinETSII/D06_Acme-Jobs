@@ -11,7 +11,7 @@
 ########################################### Feature: autenticado lista deberes de un trabajo.
 authenticated.duty.list.label.title = Título
 
-########################################### Feature: autenticado muestra un deber de una lista de deberes de un trabajo.
+########################################### Feature: autenticado muestra un deber de un trabajo.
 authenticated.duty.form.label.title = Título:
 authenticated.duty.form.label.description = Descripción:
 authenticated.duty.form.label.timePercentage = Porcentaje de tiempo en cada semana:

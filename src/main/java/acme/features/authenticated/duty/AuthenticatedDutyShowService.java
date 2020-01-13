@@ -21,18 +21,18 @@ public class AuthenticatedDutyShowService implements AbstractShowService<Authent
 	// AbstractShowService<Authenticated, Duty> interface --------------
 
 
-	//An authenticated principal can not have access to a duty of a not finalMode job
+	//An authenticated principal can not have access to a duty from a not finalMode job
 	@Override
 	public boolean authorise(final Request<Duty> request) {
 		assert request != null;
 
 		boolean result;
-		int jobId;
-		Duty dutyJob;
+		int idJob;
+		Duty duty;
 
-		jobId = request.getModel().getInteger("id");
-		dutyJob = this.repository.findOneDutyById(jobId);
-		result = dutyJob.getJob().isFinalMode() == true;
+		idJob = request.getModel().getInteger("id");
+		duty = this.repository.findOneDutyById(idJob);
+		result = duty.getJob().isFinalMode() == true;
 
 		return result;
 	}

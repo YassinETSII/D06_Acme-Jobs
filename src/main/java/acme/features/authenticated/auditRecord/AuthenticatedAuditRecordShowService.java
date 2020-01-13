@@ -21,7 +21,7 @@ public class AuthenticatedAuditRecordShowService implements AbstractShowService<
 	// AbstractShowService<Authenticated, AuditRecord> interface --------------
 
 
-	//An authenticated can't access a not final mode audit record
+	//An authenticated can not access a not final mode audit record
 	@Override
 	public boolean authorise(final Request<AuditRecord> request) {
 		assert request != null;

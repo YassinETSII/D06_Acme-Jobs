@@ -50,7 +50,7 @@ public class AuthenticatedJobListService implements AbstractListService<Authenti
 		Date d = c.getTime();
 
 		Collection<Job> result;
-		result = this.repository.findManyAll(d);
+		result = this.repository.findAllJobs(d);
 
 		return result;
 
