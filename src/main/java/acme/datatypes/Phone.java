@@ -1,5 +1,5 @@
 /*
- * UserIdentity.java
+ * Phone.java
  *
  * Copyright (c) 2019 Rafael Corchuelo.
  *
@@ -12,23 +12,21 @@
 
 package acme.datatypes;
 
-import java.beans.Transient;
-
 import javax.persistence.Embeddable;
-import javax.validation.Valid;
-import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+
+import org.hibernate.validator.constraints.Range;
 
 import acme.framework.datatypes.DomainDatatype;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
 
 @Embeddable
 @Getter
 @Setter
-@ToString
-public class UserIdentity extends DomainDatatype {
+public class Phone extends DomainDatatype {
 
 	// Serialisation identifier -----------------------------------------------
 
@@ -36,31 +34,36 @@ public class UserIdentity extends DomainDatatype {
 
 	// Attributes -------------------------------------------------------------
 
-	@NotBlank
-	private String				name;
+	@NotNull
+	@Range(min = 1, max = 999)
+	private Integer				countryCode;
+
+	@Pattern(regexp = "\\d{1,6}", message = "default.error.conversion")
+	private String				areaCode;
 
 	@NotBlank
-	private String				surname;
-
-	@NotBlank
-	@Email
-	private String				email;
-
-	@Valid
-	private Phone				phone;
+	@Pattern(regexp = "\\d{1,9}([\\s-]\\d{1,9}){0,5}", message = "default.error.conversion")
+	private String				number;
 
 
-	// Derived attributes -----------------------------------------------------
+	// Object interface -----------------------------------------------------
 
-	@Transient
-	public String getFullName() {
+	@Override
+	public String toString() {
 		StringBuilder result;
 
 		result = new StringBuilder();
-		result.append(this.surname);
-		result.append(", ");
-		result.append(this.name);
-
+		result.append("<<+");
+		result.append(this.countryCode);
+		if (this.areaCode == null) {
+			result.append(" ");
+		} else {
+			result.append(" (");
+			result.append(this.areaCode);
+			result.append(") ");
+		}
+		result.append(this.number);
+		result.append(">>");
 		return result.toString();
 	}
 
