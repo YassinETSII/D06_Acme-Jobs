@@ -22,6 +22,6 @@ worker.job.form.label.moreInfo = Más Información:
 worker.job.form.label.description = Descripción:
 worker.job.form.label.finalMode = Trabajo en modo final
 
-worker.job.form.button.add-duty = Aplicarme para este trabajo
+worker.job.form.button.add-application = Aplicarme para este trabajo
 
 worker.job.form.button.return = Volver

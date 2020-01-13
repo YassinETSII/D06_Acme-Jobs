@@ -1,5 +1,5 @@
 
-package acme.features.authenticated.auditRecord;
+package acme.features.employer.auditRecord;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -9,23 +9,25 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.auditRecords.AuditRecord;
+import acme.entities.roles.Employer;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.entities.Authenticated;
+import acme.framework.entities.Principal;
 import acme.framework.services.AbstractShowService;
 
 @Service
-public class AuthenticatedAuditRecordShowService implements AbstractShowService<Authenticated, AuditRecord> {
+public class EmployerAuditRecordShowService implements AbstractShowService<Employer, AuditRecord> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	AuthenticatedAuditRecordRepository repository;
+	EmployerAuditRecordRepository repository;
 
-	// AbstractShowService<Authenticated, AuditRecord> interface --------------
+	// AbstractShowService<Employer, AuditRecord> interface --------------
 
 
-	//An authenticated can not access a not final mode audit record
+	//An employer can not access a not final mode audit record. Neither an audit record of an elapsed job
+	//unless it's the creator.
 	@Override
 	public boolean authorise(final Request<AuditRecord> request) {
 		assert request != null;
@@ -33,14 +35,18 @@ public class AuthenticatedAuditRecordShowService implements AbstractShowService<
 		boolean result;
 		int auditRecordId;
 		AuditRecord auditRecord;
+		Principal principal = request.getPrincipal();
 
 		Calendar c = new GregorianCalendar();
 		Date d = c.getTime();
 
 		auditRecordId = request.getModel().getInteger("id");
 		auditRecord = this.repository.findOneAuditRecordById(auditRecordId);
+
 		boolean elapsedDeadline = auditRecord.getJob().getDeadline().before(d);
-		result = auditRecord.isFinalMode() == true && !elapsedDeadline;
+		boolean isCreator = this.repository.findOneEmployerByAuditRecordId(auditRecordId).getUserAccount().getId() == principal.getAccountId();
+		result = auditRecord.isFinalMode() && !elapsedDeadline || auditRecord.isFinalMode() && elapsedDeadline && isCreator;
+
 		return result;
 	}
 

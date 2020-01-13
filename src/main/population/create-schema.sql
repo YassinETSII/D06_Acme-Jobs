@@ -360,9 +360,8 @@ create index IDX9pkce3d1y6w47wadap5s5xptc on `company_record` (`stars`);
 create index IDX2psiob2l625wbcjcq6rac7jxd on `company_record` (`sector`);
 create index IDXk2t3uthe649ao1jllcuks0gv4 on `investor_record` (`stars`);
 create index IDX29vxwf0tu7wf2iwmss2d07hql on `investor_record` (`sector`);
-create index IDXrr7tnj8h1bfv46pnsq6lwvxqd on `job` (`deadline`, `final_mode`);
+create index IDXrr7tnj8h1bfv46pnsq6lwvxqd on `job` (`final_mode`, `deadline`);
 create index IDXt84ibbldao4ngscmvo7ja0es on `job` (`final_mode`);
-create index IDX8ix743uifflnrs9bupbn6y0h4 on `job` (`reference`);
 
     alter table `job` 
        add constraint UK_7jmfdvs0b0jx7i33qxgv22h7b unique (`reference`);
