@@ -358,6 +358,9 @@ create index IDXmkqdesfsvt4p9ctfgcei9yjcy on `application` (`status`, `update_mo
        add constraint UK_ct7r18vvxl5g4c4k7aefpa4do unique (`reference`);
 create index IDX9mf3mtdy6wve4sjuqrlejalq6 on `audit_record` (`final_mode`);
 create index IDX7u6rn1f09a74ihkev0ltgqy1j on `auditor_request` (`status`);
+
+    alter table `auditor_request` 
+       add constraint UK_emf8dnwjroe97odrlcsuk1nwo unique (`user_id`);
 create index IDXnr284tes3x8hnd3h716tmb3fr on `challenge` (`deadline`);
 create index IDX9pkce3d1y6w47wadap5s5xptc on `company_record` (`stars`);
 create index IDX2psiob2l625wbcjcq6rac7jxd on `company_record` (`sector`);

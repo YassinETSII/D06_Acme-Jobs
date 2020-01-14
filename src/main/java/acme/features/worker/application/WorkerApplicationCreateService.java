@@ -66,6 +66,9 @@ public class WorkerApplicationCreateService implements AbstractCreateService<Wor
 
 		result.setStatus("pending");
 
+		result.setSkills(worker.getSkills());
+		result.setQualifications(worker.getQualifications());
+
 		return result;
 	}
 

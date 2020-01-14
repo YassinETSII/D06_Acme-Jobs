@@ -14,3 +14,7 @@ authenticated.auditorRequest.form.label.responsibilityStatement = Declaración d
 
 authenticated.auditorRequest.form.button.create = Solicitar convertirse en auditor
 authenticated.auditorRequest.form.button.return = Volver
+
+authenticated.auditorRecord.form.pendingText = Tiene una petición pendiente, por favor, espere hasta que sea aceptada o rechazada.
+authenticated.auditorRecord.form.acceptedText = Su petición ha sido aceptada, se acaba de convertir en auditor.
+authenticated.auditorRecord.form.rejectedText = Lo sentimos, pero su petición ha sido rechazada.

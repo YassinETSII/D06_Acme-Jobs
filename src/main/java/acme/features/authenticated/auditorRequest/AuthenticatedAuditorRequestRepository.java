@@ -15,6 +15,7 @@ package acme.features.authenticated.auditorRequest;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import acme.entities.auditorRequests.AuditorRequest;
 import acme.framework.entities.Authenticated;
 import acme.framework.repositories.AbstractRepository;
 
@@ -23,5 +24,8 @@ public interface AuthenticatedAuditorRequestRepository extends AbstractRepositor
 
 	@Query("select a from Authenticated a where a.id = ?1")
 	Authenticated findOneUserById(int id);
+
+	@Query("select ar from AuditorRequest ar where ar.user.id = ?1")
+	AuditorRequest findOneByUserId(int userId);
 
 }

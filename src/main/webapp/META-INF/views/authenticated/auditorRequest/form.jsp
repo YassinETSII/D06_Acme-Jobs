@@ -16,9 +16,30 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:form>
-	<acme:form-textbox code="authenticated.auditorRequest.form.label.firm" path="firm"/>
-	<acme:form-textarea code="authenticated.auditorRequest.form.label.responsibilityStatement" path="responsibilityStatement"/>
+	<jstl:if test="${isPending == true}">
+		<div class="jumbotron">
+			<acme:message code="authenticated.auditorRecord.form.pendingText"/>
+		</div>
+	</jstl:if>
 	
-	<acme:form-submit code="authenticated.auditorRequest.form.button.create" action="/authenticated/auditor-request/create"/>
+	<jstl:if test="${isAccepted == true}">
+		<div class="jumbotron">
+			<acme:message code="authenticated.auditorRecord.form.acceptedText"/>
+		</div>
+	</jstl:if>
+	
+	<jstl:if test="${isRejected == true}">
+		<div class="jumbotron">
+			<acme:message code="authenticated.auditorRecord.form.rejectedText"/>
+		</div>
+	</jstl:if>
+	
+	<jstl:if test="${isPending == false && isAccepted == false && isRejected == false}">
+		<acme:form-textbox code="authenticated.auditorRequest.form.label.firm" path="firm"/>
+		<acme:form-textarea code="authenticated.auditorRequest.form.label.responsibilityStatement" path="responsibilityStatement"/>
+	
+		<acme:form-submit code="authenticated.auditorRequest.form.button.create" action="/authenticated/auditor-request/create"/>
+	</jstl:if>
+	
 	<acme:form-return code="authenticated.auditorRequest.form.button.return"/>
 </acme:form>

@@ -18,3 +18,4 @@ anonymous.investorRecord.form.button.return = Return
 ########################################### Feature: anonymous lists investor records.
 anonymous.investorRecord.list.label.investor = Investor
 anonymous.investorRecord.list.label.sector = Sector
+anonymous.investorRecord.list.label.stars = Stars

@@ -14,3 +14,7 @@ authenticated.auditorRequest.form.label.responsibilityStatement = Responsibility
 
 authenticated.auditorRequest.form.button.create = Request to become auditor
 authenticated.auditorRequest.form.button.return = Return
+
+authenticated.auditorRecord.form.pendingText = You have a pending request, please wait until it is accepted or rejected.
+authenticated.auditorRecord.form.acceptedText = Your request was accepted, you have now become an auditor.
+authenticated.auditorRecord.form.rejectedText = We are sorry, but your request was rejected.
