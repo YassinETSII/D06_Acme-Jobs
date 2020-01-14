@@ -29,9 +29,11 @@ public class SponsorCreditCardShowService implements AbstractShowService<Sponsor
 		boolean result;
 		Sponsor sponsor;
 		Principal principal;
+		CreditCard creditCard;
 		principal = request.getPrincipal();
 		sponsor = this.repository.findOneSponsorById(request.getModel().getInteger("idSponsor"));
-		result = sponsor.getCreditCard() != null && sponsor.getUserAccount().getId() == principal.getAccountId();
+		creditCard = this.repository.findOneById(request.getModel().getInteger("id"));
+		result = sponsor.getCreditCard() != null && sponsor.getUserAccount().getId() == principal.getAccountId() && creditCard == sponsor.getCreditCard();
 		return result;
 	}
 
