@@ -37,3 +37,9 @@
 	</acme:footer-logo>		
 	
 </acme:footer-panel>
+  
+<img src="${requestScope.banner.picture}" class="rounded mx-auto d-block" alt="Acme Jobs, Inc."/>
+
+
+
+

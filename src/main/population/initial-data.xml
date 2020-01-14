@@ -80,4 +80,37 @@
 		<property name="spamThreshold" value="1.0"/>
 	</bean>
 	
+	<!-- Banners -->
+	
+	<bean id="banner1" class="acme.entities.banners.Banner">
+		<property name="picture" value="https://i.imgur.com/8YcXhS0.png" />
+		<property name="slogan" value="Our planet needs superheroes like you"/>
+		<property name="URL" value="https://i.imgur.com/8YcXhS0.png"/>
+	</bean>
+	
+	<bean id="banner2" class="acme.entities.banners.Banner">
+		<property name="picture" value="https://i.imgur.com/NGLSjk6.png" />
+		<property name="slogan" value="What would you change?"/>
+		<property name="URL" value="https://i.imgur.com/NGLSjk6.png"/>
+	</bean>
+	
+	<bean id="banner3" class="acme.entities.banners.Banner">
+		<property name="picture" value="https://i.imgur.com/2eVF1HG.png" />
+		<property name="slogan" value="Afoprodei"/>
+		<property name="URL" value="https://i.imgur.com/2eVF1HG.png"/>
+	</bean>
+	
+	<bean id="banner4" class="acme.entities.banners.Banner">
+		<property name="picture" value="https://i.imgur.com/fihihcF.png" />
+		<property name="slogan" value="Fundación infantil"/>
+		<property name="URL" value="https://i.imgur.com/fihihcF.png"/>
+	</bean>
+	
+	<bean id="banner5" class="acme.entities.banners.Banner">
+		<property name="picture" value="https://i.imgur.com/MtBRoNP.png" />
+		<property name="slogan" value="Medecins sans frontieres"/>
+		<property name="URL" value="https://i.imgur.com/MtBRoNP.png"/>
+	</bean>
+	
+	
 </beans>
