@@ -50,16 +50,12 @@ public class AuditorAuditRecordListService implements AbstractListService<Audito
 		Collection<AuditRecord> col1;
 		Collection<AuditRecord> col2;
 		Collection<AuditRecord> result;
-
 		Principal principal;
 		principal = request.getPrincipal();
 		int id1 = request.getModel().getInteger("idJob");
 		int id2 = principal.getActiveRoleId();
-
 		col1 = this.repository.findManyNotFinalModeAuditRecordsByJobIdAndAuditorId(id1, id2);
-
 		col2 = this.repository.findManyFinalModeAuditRecordsByJobId(id1);
-
 		result = Stream.concat(col1.stream(), col2.stream()).collect(Collectors.toList());
 
 		return result;

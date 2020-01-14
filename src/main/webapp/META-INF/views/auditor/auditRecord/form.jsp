@@ -25,13 +25,15 @@
 		readonly="true"/>
 	</jstl:if>
 	<acme:form-textarea code="auditor.auditRecord.form.label.body" path="body"/>
+
+	<acme:form-textbox code="auditor.auditRecord.form.label.job" path="job.reference" readonly="true"/>
+	
 	<jstl:if test="${finalMode == true}">
 		<acme:form-checkbox code="auditor.auditRecord.form.label.finalMode" path="finalMode" readonly="true"/>
 	</jstl:if>
 	<jstl:if test="${finalMode == false}">
 		<acme:form-checkbox code="auditor.auditRecord.form.label.finalMode" path="finalMode"/>
 	</jstl:if>
-	<acme:form-textbox code="auditor.auditRecord.form.label.job" path="job.reference" readonly="true"/>
 	
 	<acme:form-submit test="${command == 'create'}"
 		code="auditor.auditRecord.form.button.create" 
