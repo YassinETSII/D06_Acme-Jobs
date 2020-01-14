@@ -349,8 +349,6 @@
     insert into `hibernate_sequence` values ( 1 );
 create index IDXnhikaa2dj3la6o2o7e9vo01y0 on `announcement` (`moment`);
 create index IDX2q2747fhp099wkn3j2yt05fhs on `application` (`status`);
-create index IDXavmpyh8rpetaj6xntvliy5nm1 on `application` (`reference` asc, `status` asc, `moment` desc);
-create index IDXdwumdwpjcwdk1mef9ua69yc2p on `application` (`reference`);
 create index IDX5wwxv107kvi5si12nh4226lnx on `application` (`status`, `moment`);
 create index IDXmkqdesfsvt4p9ctfgcei9yjcy on `application` (`status`, `update_moment`);
 

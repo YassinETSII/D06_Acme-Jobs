@@ -695,8 +695,8 @@
 	
 	<bean id="job1app1" class="acme.entities.applications.Application">
 		<property name="reference" value="EMP1-JOB1-WOR1"/>
-		<property name="moment" value="2019/12/11 23:59"/>
-		<property name="updateMoment" value="2019/12/13 23:59"/>
+		<property name="moment" value="2020/01/11 23:59"/>
+		<property name="updateMoment" value="2020/01/13 23:59"/>
 		<property name="status" value="accepted"/>
 		<property name="statement" value="Statement 1"/>
 		<property name="skills" value="Skills 1"/>
@@ -708,8 +708,8 @@
 	
 	<bean id="job1app2" class="acme.entities.applications.Application">
 		<property name="reference" value="EMP1-JOB1-WOR2"/>
-		<property name="moment" value="2019/12/14 23:59"/>
-		<property name="updateMoment" value="2019/12/15 23:59"/>
+		<property name="moment" value="2020/01/11 23:59"/>
+		<property name="updateMoment" value="2020/01/12 23:59"/>
 		<property name="status" value="accepted"/>
 		<property name="statement" value="Statement 3"/>
 		<property name="skills" value="Skills 3"/>
@@ -721,8 +721,8 @@
 	
 	<bean id="job3app1" class="acme.entities.applications.Application">
 		<property name="reference" value="EMP1-JOB3-WOR1"/>
-		<property name="moment" value="2019/12/15 23:59"/>
-		<property name="updateMoment" value="2019/12/16 23:59"/>
+		<property name="moment" value="2020/01/04 23:59"/>
+		<property name="updateMoment" value="2020/01/08 23:59"/>
 		<property name="status" value="rejected"/>
 		<property name="statement" value="Statement 4"/>
 		<property name="skills" value="Skills 4"/>
@@ -734,8 +734,8 @@
 	
 	<bean id="job4app1" class="acme.entities.applications.Application">
 		<property name="reference" value="EMP2-JOB4-WOR2"/>
-		<property name="moment" value="2019/04/11 23:59"/>
-		<property name="updateMoment" value="2019/04/11 23:59"/>
+		<property name="moment" value="2020/01/13 23:59"/>
+		<property name="updateMoment" value="2020/01/13 23:59"/>
 		<property name="status" value="pending"/>
 		<property name="statement" value="Statement 5"/>
 		<property name="skills" value="Skills 5"/>
@@ -747,8 +747,8 @@
 	</bean>
 		<bean id="job2app1" class="acme.entities.applications.Application">
 		<property name="reference" value="EMP1-JOB2-WOR1"/>
-		<property name="moment" value="2019/12/14 23:59"/>
-		<property name="updateMoment" value="2019/12/14 23:59"/>
+		<property name="moment" value="2020/01/13 23:59"/>
+		<property name="updateMoment" value="2020/01/13 23:59"/>
 		<property name="status" value="pending"/>
 		<property name="statement" value="Statement 2"/>
 		<property name="skills" value="Skills 2"/>
@@ -760,8 +760,8 @@
 	
 	<bean id="job2app3" class="acme.entities.applications.Application">
 		<property name="reference" value="EMP1-JOB2-WOR2"/>
-		<property name="moment" value="2019/12/14 23:59"/>
-		<property name="updateMoment" value="2019/12/14 23:59"/>		
+		<property name="moment" value="2020/01/12 23:59"/>
+		<property name="updateMoment" value="2020/01/12 23:59"/>		
 		<property name="status" value="pending"/>
 		<property name="statement" value="Statement 7"/>
 		<property name="skills" value="Skills 7"/>
@@ -773,8 +773,8 @@
 	
 	<bean id="job3app2" class="acme.entities.applications.Application">
 		<property name="reference" value="EMP1-JOB3-WOR2"/>
-		<property name="moment" value="2019/12/16 23:59"/>
-		<property name="updateMoment" value="2019/12/16 23:59"/>		
+		<property name="moment" value="2020/01/11 23:59"/>
+		<property name="updateMoment" value="2020/01/11 23:59"/>		
 		<property name="status" value="pending"/>
 		<property name="statement" value="Statement 6"/>
 		<property name="skills" value="Skills 6"/>
@@ -786,8 +786,8 @@
 	
 	<bean id="job4app2" class="acme.entities.applications.Application">
 		<property name="reference" value="EMP2-JOB4-WOR1"/>
-		<property name="moment" value="2019/12/15 23:59"/>
-		<property name="updateMoment" value="2019/12/16 23:59"/>		
+		<property name="moment" value="2020/01/07 22:59"/>
+		<property name="updateMoment" value="2020/01/08 23:59"/>		
 		<property name="status" value="rejected"/>
 		<property name="statement" value="Statement 8"/>
 		<property name="skills" value="Skills 8"/>
@@ -1069,33 +1069,33 @@
 	
 	<!-- Banners -->	
 	<bean id="commercialBanner01" class="acme.entities.banners.CommercialBanner">	
-		<property name="picture" value="https://www.tumblr.com/commercialBannerSample01"/>	
-		<property name="slogan" value="commercial banner slogan sample 1"/>	
-		<property name="URL" value="https://www.tumblr.com"/>	
+		<property name="picture" value="https://colaninfotech.com/wp-content/uploads/2019/01/Spring_Banner.png"/>	
+		<property name="slogan" value="Spring framework"/>	
+		<property name="URL" value="https://www.acme.com"/>	
 		<property name="creditCard" ref = "creditCard01"/>	
 		<property name="sponsor" ref="sponsor1Sponsor" />	
 	</bean>		
 		
 	<bean id="commercialBanner02" class="acme.entities.banners.CommercialBanner">	
-		<property name="picture" value="https://www.tumblr.com/commercialBannerSample02"/>	
-		<property name="slogan" value="commercial banner slogan sample 2"/>	
-		<property name="URL" value="https://www.tumblr.com"/>	
+		<property name="picture" value="https://www.thewrap.com/wp-content/uploads/files/main_image/netflix-banner.jpg"/>	
+		<property name="slogan" value="Netflix and chill"/>	
+		<property name="URL" value="https://www.acme.com"/>	
 		<property name="creditCard" ref = "creditCard02"/>	
 		<property name="sponsor" ref="sponsor3Sponsor" />	
 	</bean>	
 	
 	<bean id="nonCommercialBanner01" class="acme.entities.banners.NonCommercialBanner">
-		<property name="picture" value="https://www.tumblr.com/NonCommercialBannerSample01"/>
-		<property name="slogan" value="non commercial banner slogan sample 1"/>
-		<property name="URL" value="https://www.tumblr.com"/>
+		<property name="picture" value="https://i.imgur.com/NGLSjk6.png"/>
+		<property name="slogan" value="What would you change?"/>
+		<property name="URL" value="https://www.acme.com"/>
 		<property name="jingle" value="a beautiful jingle sample 1"/>
 		<property name="sponsor" ref="sponsor2Sponsor" />
 	</bean>	
 	
 		<bean id="nonCommercialBanner02" class="acme.entities.banners.NonCommercialBanner">
-		<property name="picture" value="https://www.tumblr.com/NonCommercialBannerSample02"/>
-		<property name="slogan" value="non commercial banner slogan sample 2"/>
-		<property name="URL" value="https://www.tumblr.com"/>
+		<property name="picture" value="https://i.imgur.com/8YcXhS0.png"/>
+		<property name="slogan" value="Our planet needs superheroes like you"/>
+		<property name="URL" value="https://www.acme.com"/>
 		<property name="jingle" value="a beautiful jingle sample 2"/>
 		<property name="sponsor" ref="sponsor1Sponsor" />
 	</bean>	

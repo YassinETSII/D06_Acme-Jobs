@@ -24,13 +24,13 @@ public interface AdministratorChartRepository extends AbstractRepository {
 	@Query("select 1.0 * count(a) / (select count(b) from Application b), a.status from Application a group by a.status")
 	Collection<Object[]> ratioOfApplicationsGroupedByStatus();
 
-	@Query("select count(a), cast(a.moment as date) from Application a where a.status='pending' and a.moment >= ?1 group by cast(a.moment as date)")
-	Collection<Object[]> numPendingApplicationsPerDays(Date fourWeeks);
+	@Query("select count(a) from Application a where a.status = 'pending' and cast(a.moment as date) = ?1")
+	Long numPendingApplicationsPerDays(Date date);
 
-	@Query("select count(a), cast(a.updateMoment as date) from Application a where a.status='accepted' and a.updateMoment >= ?1 group by cast(a.updateMoment as date)")
-	Collection<Object[]> numAcceptedApplicationsPerDays(Date fourWeeks);
+	@Query("select count(a) from Application a where a.status = 'accepted' and cast(a.updateMoment as date) = ?1")
+	Long numAcceptedApplicationsPerDays(Date date);
 
-	@Query("select count(a), cast(a.updateMoment as date) from Application a where a.status='rejected' and a.updateMoment >= ?1 group by cast(a.updateMoment as date)")
-	Collection<Object[]> numRejectedApplicationsPerDays(Date fourWeeks);
+	@Query("select count(a) from Application a where a.status = 'rejected' and cast(a.updateMoment as date) = ?1")
+	Long numRejectedApplicationsPerDays(Date date);
 
 }
