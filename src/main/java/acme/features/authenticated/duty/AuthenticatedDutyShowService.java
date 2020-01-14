@@ -1,6 +1,10 @@
 
 package acme.features.authenticated.duty;
 
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,18 +25,23 @@ public class AuthenticatedDutyShowService implements AbstractShowService<Authent
 	// AbstractShowService<Authenticated, Duty> interface --------------
 
 
-	//An authenticated principal can not have access to a duty of a not finalMode job
+	//An authenticated principal can not have access to a duty from a not finalMode job. Neither to elapsed ones.
 	@Override
 	public boolean authorise(final Request<Duty> request) {
 		assert request != null;
 
 		boolean result;
-		int jobId;
-		Duty dutyJob;
+		int idJob;
+		Duty duty;
 
-		jobId = request.getModel().getInteger("id");
-		dutyJob = this.repository.findOneDutyById(jobId);
-		result = dutyJob.getJob().isFinalMode() == true;
+		Calendar c = new GregorianCalendar();
+		Date d = c.getTime();
+
+		idJob = request.getModel().getInteger("id");
+		duty = this.repository.findOneDutyById(idJob);
+		boolean elapsedDeadline = duty.getJob().getDeadline().before(d);
+
+		result = duty.getJob().isFinalMode() == true && !elapsedDeadline;
 
 		return result;
 	}

@@ -24,6 +24,8 @@
 		<acme:form-textarea code="worker.job.form.label.description" path="description"/>
 	
 		<acme:form-submit code="worker.job.form.button.add-application" action="/worker/application/create?idJob=${id}" method="get" />
+		<acme:form-submit code="worker.job.form.button.list-duties" action="/authenticated/duty/list?idJob=${id}" method="get" />
+		<acme:form-submit code="worker.job.form.button.list-audit-records" action="/authenticated/audit-record/list?idJob=${id}" method="get" />
 		
 	<acme:form-return code="worker.job.form.button.return"/>	
 	

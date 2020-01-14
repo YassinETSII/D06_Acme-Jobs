@@ -1,6 +1,10 @@
 
 package acme.features.authenticated.job;
 
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,18 +25,23 @@ public class AuthenticatedJobShowService implements AbstractShowService<Authenti
 	// AbstractShowService<Authenticated, Job> interface --------------
 
 
-	//An authenticated principal can not have access to a not finalMode job
+	//An authenticated principal can not have access to a not finalMode job. Neither the elapsed ones.
 	@Override
 	public boolean authorise(final Request<Job> request) {
 		assert request != null;
 
 		boolean result;
-		int jobId;
+		int idJob;
 		Job job;
 
-		jobId = request.getModel().getInteger("id");
-		job = this.repository.findOneJobById(jobId);
-		result = job.isFinalMode() == true;
+		Calendar c = new GregorianCalendar();
+		Date d = c.getTime();
+
+		idJob = request.getModel().getInteger("id");
+		job = this.repository.findOneJobById(idJob);
+		boolean elapsedDeadline = job.getDeadline().before(d);
+
+		result = job.isFinalMode() == true && !elapsedDeadline;
 
 		return result;
 	}
@@ -44,7 +53,7 @@ public class AuthenticatedJobShowService implements AbstractShowService<Authenti
 		assert model != null;
 
 		request.unbind(entity, model, "reference", "title", "deadline");
-		request.unbind(entity, model, "salary", "moreInfo", "description");
+		request.unbind(entity, model, "salary", "description", "moreInfo");
 
 	}
 

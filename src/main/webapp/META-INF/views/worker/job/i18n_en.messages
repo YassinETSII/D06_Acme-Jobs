@@ -23,5 +23,7 @@ worker.job.form.label.description = Description:
 worker.job.form.label.finalMode = Final mode job
 
 worker.job.form.button.add-application = Apply for this job
+worker.job.form.button.list-duties = List duties
+worker.job.form.button.list-audit-records = List audit records
 
 worker.job.form.button.return = Return

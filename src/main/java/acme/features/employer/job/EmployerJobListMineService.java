@@ -45,10 +45,9 @@ public class EmployerJobListMineService implements AbstractListService<Employer,
 		assert request != null;
 
 		Collection<Job> result;
-		Principal principal;
-
-		principal = request.getPrincipal();
-		result = this.repository.findManyJobsByEmployerId(principal.getActiveRoleId());
+		Principal principal = request.getPrincipal();
+		int employerId = principal.getActiveRoleId();
+		result = this.repository.findManyJobsByEmployerId(employerId);
 
 		return result;
 

@@ -52,7 +52,7 @@ public class EmployerJobUpdateService implements AbstractUpdateService<Employer,
 		assert entity != null;
 		assert errors != null;
 
-		request.bind(entity, errors, "employer");
+		request.bind(entity, errors, "employer", "reference");
 
 	}
 
@@ -62,7 +62,7 @@ public class EmployerJobUpdateService implements AbstractUpdateService<Employer,
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "title", "deadline", "salary", "description", "moreInfo", "finalMode");
+		request.unbind(entity, model, "reference", "title", "deadline", "salary", "description", "moreInfo", "finalMode");
 
 	}
 

@@ -13,8 +13,8 @@ authenticated.job.form.label.reference = Referencia:
 authenticated.job.form.label.title = Título:
 authenticated.job.form.label.deadline = Fecha de vencimiento:
 authenticated.job.form.label.salary = Salario:
-authenticated.job.form.label.moreInfo = Más información:
 authenticated.job.form.label.description = Descripción:
+authenticated.job.form.label.moreInfo = Más información:
 authenticated.job.form.button.list-duties = Listar deberes
 authenticated.job.form.button.list-audit-records = Listar registros de auditoría
 
@@ -22,5 +22,5 @@ authenticated.job.form.button.return = Volver
 
 ########################################### Feature: autenticado lista los trabajos.
 authenticated.job.list.label.reference = Referencia
-authenticated.job.list.label.deadline = Fecha de vencimiento
 authenticated.job.list.label.title = Título
+authenticated.job.list.label.deadline = Fecha de vencimiento

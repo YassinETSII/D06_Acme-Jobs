@@ -9,14 +9,14 @@
 # they accept any liabilities with respect to them.
 
 ########################################### Feature: autenticado muestra un registro de auditoría.
-authenticated.auditRecord.form.label.title = Título:
-authenticated.auditRecord.form.label.moment = Momento de creación:
-authenticated.auditRecord.form.label.body = Cuerpo:
-authenticated.auditRecord.form.label.job-reference = Referencia del trabajo:
+employer.auditRecord.form.label.title = Título:
+employer.auditRecord.form.label.moment = Momento de creación:
+employer.auditRecord.form.label.body = Cuerpo:
+employer.auditRecord.form.label.job-reference = Referencia del trabajo:
 
-authenticated.auditRecord.form.button.return = Volver
+employer.auditRecord.form.button.return = Volver
 
 ########################################### Feature: autenticado lista registros de auditoría.
-authenticated.auditRecord.list.label.title = Título
-authenticated.auditRecord.list.label.moment = Momento de creación
+employer.auditRecord.list.label.title = Título
+employer.auditRecord.list.label.moment = Momento de creación
 
