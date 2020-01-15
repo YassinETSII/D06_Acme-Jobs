@@ -16,6 +16,10 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:form>
+	<acme:form-hidden path="isPending"/>
+	<acme:form-hidden path="isAccepted"/>
+	<acme:form-hidden path="isRejected"/>
+	
 	<jstl:if test="${isPending == true}">
 		<div class="jumbotron">
 			<acme:message code="authenticated.auditorRecord.form.pendingText"/>
