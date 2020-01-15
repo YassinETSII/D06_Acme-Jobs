@@ -1,10 +1,6 @@
 
 package acme.features.employer.job;
 
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -37,15 +33,11 @@ public class EmployerJobShowService implements AbstractShowService<Employer, Job
 		Employer employer;
 		Principal principal = request.getPrincipal();
 
-		Calendar c = new GregorianCalendar();
-		Date d = c.getTime();
-
 		idJob = request.getModel().getInteger("id");
 		job = this.repository.findOneJobById(idJob);
-		boolean elapsedDeadline = job.getDeadline().before(d);
 
 		employer = job.getEmployer();
-		result = job.isFinalMode() && !elapsedDeadline || job.isFinalMode() && elapsedDeadline && employer.getUserAccount().getId() == principal.getAccountId() || !job.isFinalMode() && employer.getUserAccount().getId() == principal.getAccountId();
+		result = job.isFinalMode() || !job.isFinalMode() && employer.getUserAccount().getId() == principal.getAccountId();
 
 		return result;
 	}

@@ -1,10 +1,7 @@
 
 package acme.features.employer.duty;
 
-import java.util.Calendar;
 import java.util.Collection;
-import java.util.Date;
-import java.util.GregorianCalendar;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -37,15 +34,11 @@ public class EmployerDutyListService implements AbstractListService<Employer, Du
 		Employer employer;
 		Principal principal;
 
-		Calendar c = new GregorianCalendar();
-		Date d = c.getTime();
-
 		jobId = request.getModel().getInteger("idJob");
 		job = this.repository.findOneJobById(jobId);
-		boolean elapsedDeadline = job.getDeadline().before(d);
 		employer = job.getEmployer();
 		principal = request.getPrincipal();
-		result = job.isFinalMode() && !elapsedDeadline || job.isFinalMode() && elapsedDeadline && employer.getUserAccount().getId() == principal.getAccountId() || !job.isFinalMode() && employer.getUserAccount().getId() == principal.getAccountId();
+		result = job.isFinalMode() || !job.isFinalMode() && employer.getUserAccount().getId() == principal.getAccountId();
 		return result;
 	}
 

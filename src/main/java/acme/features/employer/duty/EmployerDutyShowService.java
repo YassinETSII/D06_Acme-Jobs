@@ -1,10 +1,6 @@
 
 package acme.features.employer.duty;
 
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -42,13 +38,7 @@ public class EmployerDutyShowService implements AbstractShowService<Employer, Du
 		employer = dutyJob.getJob().getEmployer();
 		principal = request.getPrincipal();
 
-		Calendar c = new GregorianCalendar();
-		Date d = c.getTime();
-
-		boolean elapsedDeadline = dutyJob.getJob().getDeadline().before(d);
-
-		result = dutyJob.getJob().isFinalMode() && !elapsedDeadline || dutyJob.getJob().isFinalMode() && elapsedDeadline && employer.getUserAccount().getId() == principal.getAccountId()
-			|| !dutyJob.getJob().isFinalMode() && employer.getUserAccount().getId() == principal.getAccountId();
+		result = dutyJob.getJob().isFinalMode() || !dutyJob.getJob().isFinalMode() && employer.getUserAccount().getId() == principal.getAccountId();
 
 		return result;
 	}

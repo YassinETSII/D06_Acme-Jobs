@@ -1,10 +1,6 @@
 
 package acme.features.authenticated.auditRecord;
 
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,7 +21,7 @@ public class AuthenticatedAuditRecordShowService implements AbstractShowService<
 	// AbstractShowService<Authenticated, AuditRecord> interface --------------
 
 
-	//An authenticated can not access a not final mode audit record
+	//An authenticated can not access a not final mode audit record.
 	@Override
 	public boolean authorise(final Request<AuditRecord> request) {
 		assert request != null;
@@ -34,13 +30,9 @@ public class AuthenticatedAuditRecordShowService implements AbstractShowService<
 		int auditRecordId;
 		AuditRecord auditRecord;
 
-		Calendar c = new GregorianCalendar();
-		Date d = c.getTime();
-
 		auditRecordId = request.getModel().getInteger("id");
 		auditRecord = this.repository.findOneAuditRecordById(auditRecordId);
-		boolean elapsedDeadline = auditRecord.getJob().getDeadline().before(d);
-		result = auditRecord.isFinalMode() == true && !elapsedDeadline;
+		result = auditRecord.isFinalMode() == true;
 		return result;
 	}
 

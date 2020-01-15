@@ -49,7 +49,7 @@ public class AuditorAuditRecordCreateService implements AbstractCreateService<Au
 		assert entity != null;
 		assert errors != null;
 
-		request.bind(entity, errors, "moment");
+		request.bind(entity, errors, "moment", "job.reference");
 
 	}
 
@@ -69,6 +69,17 @@ public class AuditorAuditRecordCreateService implements AbstractCreateService<Au
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+
+		/*
+		 * long nummberWorkers;
+		 * int idJob;
+		 * boolean deleteApplicatedJob;
+		 * 
+		 * idJob = entity.getId();
+		 * nummberWorkers = this.repository.countWorkersByJobId(idJob);
+		 * deleteApplicatedJob = nummberWorkers == 0;
+		 * errors.state(request, deleteApplicatedJob, "*", "employer.job.error.deleteJobWithApplication");
+		 */
 
 	}
 
