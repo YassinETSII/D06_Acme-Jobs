@@ -22,3 +22,4 @@ authenticated.companyRecord.form.button.return = Volver
 ########################################### Feature: autenticado lista registros de compañías.
 authenticated.companyRecord.list.label.company = Compañía
 authenticated.companyRecord.list.label.sector = Sector
+authenticated.companyRecord.list.label.stars = Estrellas
