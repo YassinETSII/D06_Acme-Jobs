@@ -22,3 +22,4 @@ authenticated.companyRecord.form.button.return = Return
 ########################################### Feature: authenticated lists company records.
 authenticated.companyRecord.list.label.company = Company
 authenticated.companyRecord.list.label.sector = Sector
+authenticated.companyRecord.list.label.stars = Stars

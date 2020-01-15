@@ -18,3 +18,4 @@ authenticated.investorRecord.form.button.return = Return
 ########################################### Feature: authenticated lists investor records.
 authenticated.investorRecord.list.label.investor = Investor
 authenticated.investorRecord.list.label.sector = Sector
+authenticated.investorRecord.list.label.stars = Stars

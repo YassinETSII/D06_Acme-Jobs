@@ -18,3 +18,4 @@ authenticated.investorRecord.form.button.return = Volver
 ########################################### Feature: autenticado lista registros de inversores
 authenticated.investorRecord.list.label.investor = Inversor
 authenticated.investorRecord.list.label.sector = Sector
+authenticated.investorRecord.list.label.stars = Stars
