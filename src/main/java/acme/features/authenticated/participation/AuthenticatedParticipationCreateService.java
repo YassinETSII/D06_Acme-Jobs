@@ -48,6 +48,10 @@ public class AuthenticatedParticipationCreateService implements AbstractCreateSe
 		model.setAttribute("users", users);
 		model.setAttribute("messageThreadId", request.getModel().getInteger("messageThreadId"));
 
+		boolean allUsersIn;
+		allUsersIn = users.isEmpty();
+		model.setAttribute("allUsersIn", allUsersIn);
+
 	}
 
 	@Override

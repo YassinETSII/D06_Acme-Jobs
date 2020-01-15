@@ -16,7 +16,13 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:form>
-	<jstl:if test="${command == 'create'}">
+	<acme:form-hidden path="allUsersIn"/>
+	<jstl:if test="${allUsersIn == true}">
+		<div class="jumbotron">
+			<acme:message code="authenticated.participation.form.allUsersInText"/>
+		</div>
+	</jstl:if>
+	<jstl:if test="${command == 'create' && allUsersIn == false}">
 		<acme:form-textbox code="authenticated.participation.form.label.thread" path="thread.title" readonly="true"/>
 		<acme:form-select code="authenticated.participation.form.label.userName" path="participant">
 			<jstl:forEach items="${users}" var="user">
