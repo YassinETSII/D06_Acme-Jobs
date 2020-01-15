@@ -1,6 +1,10 @@
 
 package acme.features.sponsor.commercialBanner;
 
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -71,6 +75,9 @@ public class SponsorCommercialBannerCreateService implements AbstractCreateServi
 		assert entity != null;
 		assert errors != null;
 
+		Calendar c = new GregorianCalendar();
+		Date d = c.getTime();
+
 		//Validation of spam
 		String slogan;
 		boolean checkSloganSpam;
@@ -78,6 +85,17 @@ public class SponsorCommercialBannerCreateService implements AbstractCreateServi
 			slogan = entity.getSlogan();
 			checkSloganSpam = CheckSpamWords.isSpam(slogan, this.repository.findConfiguration());
 			errors.state(request, !checkSloganSpam, "slogan", "sponsor.commercialBanner.error.spam");
+		}
+
+		//Validaiton of elapsed credit card
+		boolean currentYearCreditCard;
+		currentYearCreditCard = entity.getCreditCard().getExpirationYear() >= d.getYear() - 100;
+		errors.state(request, currentYearCreditCard, "creditCard.expirationYear", "sponsor.commercialBanner.error.expirationYear");
+
+		boolean activeMonthCreditCard;
+		if (entity.getCreditCard().getExpirationYear() == d.getYear() - 100) {
+			activeMonthCreditCard = entity.getCreditCard().getExpirationMonth() >= d.getMonth() + 1;
+			errors.state(request, activeMonthCreditCard, "creditCard.expirationMonth", "sponsor.commercialBanner.error.expirationMonth");
 		}
 
 	}
