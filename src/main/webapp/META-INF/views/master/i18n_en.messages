@@ -33,8 +33,6 @@ master.menu.authenticated = Authenticated
 master.menu.authenticated.announcement.list = List announcements
 master.menu.authenticated.companyRecord.list = List company records
 master.menu.authenticated.investorRecord.list = List investor records
-master.menu.authenticated.request.list = List requests
-master.menu.authenticated.offer.list = List offers
 master.menu.authenticated.challenge.list = List challenges
 master.menu.authenticated.job.list = List jobs
 master.menu.authenticated.messageThread.list = List message threads
@@ -70,26 +68,12 @@ master.menu.administrator.companyRecord.list = List company records
 master.menu.administrator.companyRecord.create = Create company record
 master.menu.administrator.investorRecord.list = List investor records
 master.menu.administrator.investorRecord.create = Create investor record
-master.menu.administrator.commercialBanner.list = List commercial banners
-master.menu.administrator.nonCommercialBanner.list = List non commercial banners
 master.menu.administrator.auditorRequest.list = List pending auditor requests
 master.menu.administrator.challenge.list = List challenges
 master.menu.administrator.challenge.create = Create challenge
 master.menu.administrator.dashboard.form = Display dashboard
 master.menu.administrator.chart.form = Display charts
 master.menu.administrator.shutdown = Shut down
-
-# master.menu.provider ########################################################
-
-master.menu.provider = Provider
-master.menu.provider.favourite-link = Favourite link
-master.menu.provider.request.create = Create request
-
-# master.menu.consumer ##########################################################
-
-master.menu.consumer = Consumer
-master.menu.consumer.favourite-link = Favourite link
-master.menu.consumer.offer.create = Create offer
 
 # master.menu.employer ##########################################################
 
@@ -101,8 +85,8 @@ master.menu.employer.application.listMine = List my applications
 # master.menu.worker ##########################################################
 
 master.menu.worker = Worker
-master.menu.worker.job.list-applied = List active jobs that I applied
-master.menu.worker.job.list-not-applied = List active jobs that I didn't apply
+master.menu.worker.job.list-applied = List jobs that I applied
+master.menu.worker.job.list-not-applied = List jobs that I didn't apply
 master.menu.worker.application.list-mine = List my applications
 
 # master.menu.auditor ##########################################################
@@ -125,10 +109,6 @@ master.menu.sponsor.creditCard.form = Show credit card
 
 master.menu.user-account = Account
 master.menu.user-account.general-data = General data
-master.menu.user-account.provider = Provider data
-master.menu.user-account.become-provider = Become a provider
-master.menu.user-account.consumer = Consumer data
-master.menu.user-account.become-consumer = Become a consumer
 master.menu.user-account.become-employer = Become an employer
 master.menu.user-account.employer = Employer data
 master.menu.user-account.become-worker = Become a worker

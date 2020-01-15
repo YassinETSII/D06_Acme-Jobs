@@ -27,3 +27,4 @@ administrator.companyRecord.error.administratorPhoneFormat = The phone must have
 ########################################### Feature: administrator lists company records.
 administrator.companyRecord.list.label.company = Company
 administrator.companyRecord.list.label.sector = Sector
+administrator.companyRecord.list.label.stars = Stars

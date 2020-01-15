@@ -130,15 +130,6 @@
         primary key (`id`)
     ) engine=InnoDB;
 
-    create table `consumer` (
-       `id` integer not null,
-        `version` integer not null,
-        `user_account_id` integer,
-        `company` varchar(255),
-        `sector` varchar(255),
-        primary key (`id`)
-    ) engine=InnoDB;
-
     create table `credit_card` (
        `id` integer not null,
         `version` integer not null,
@@ -246,48 +237,11 @@
         primary key (`id`)
     ) engine=InnoDB;
 
-    create table `offer` (
-       `id` integer not null,
-        `version` integer not null,
-        `deadline` datetime(6),
-        `max_reward_amount` double precision,
-        `max_reward_currency` varchar(255),
-        `min_reward_amount` double precision,
-        `min_reward_currency` varchar(255),
-        `moment` datetime(6),
-        `text` varchar(1024),
-        `ticker` varchar(255),
-        `title` varchar(255),
-        primary key (`id`)
-    ) engine=InnoDB;
-
     create table `participation` (
        `id` integer not null,
         `version` integer not null,
         `participant_id` integer not null,
         `thread_id` integer not null,
-        primary key (`id`)
-    ) engine=InnoDB;
-
-    create table `provider` (
-       `id` integer not null,
-        `version` integer not null,
-        `user_account_id` integer,
-        `company` varchar(255),
-        `sector` varchar(255),
-        primary key (`id`)
-    ) engine=InnoDB;
-
-    create table `request` (
-       `id` integer not null,
-        `version` integer not null,
-        `deadline` datetime(6),
-        `moment` datetime(6),
-        `reward_amount` double precision,
-        `reward_currency` varchar(255),
-        `text` varchar(1024),
-        `ticker` varchar(255),
-        `title` varchar(255),
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -349,8 +303,6 @@
     insert into `hibernate_sequence` values ( 1 );
 create index IDXnhikaa2dj3la6o2o7e9vo01y0 on `announcement` (`moment`);
 create index IDX2q2747fhp099wkn3j2yt05fhs on `application` (`status`);
-create index IDXavmpyh8rpetaj6xntvliy5nm1 on `application` (`reference` asc, `status` asc, `moment` desc);
-create index IDXdwumdwpjcwdk1mef9ua69yc2p on `application` (`reference`);
 create index IDX5wwxv107kvi5si12nh4226lnx on `application` (`status`, `moment`);
 create index IDXmkqdesfsvt4p9ctfgcei9yjcy on `application` (`status`, `update_moment`);
 
@@ -358,6 +310,9 @@ create index IDXmkqdesfsvt4p9ctfgcei9yjcy on `application` (`status`, `update_mo
        add constraint UK_ct7r18vvxl5g4c4k7aefpa4do unique (`reference`);
 create index IDX9mf3mtdy6wve4sjuqrlejalq6 on `audit_record` (`final_mode`);
 create index IDX7u6rn1f09a74ihkev0ltgqy1j on `auditor_request` (`status`);
+
+    alter table `auditor_request` 
+       add constraint UK_emf8dnwjroe97odrlcsuk1nwo unique (`user_id`);
 create index IDXnr284tes3x8hnd3h716tmb3fr on `challenge` (`deadline`);
 create index IDX9pkce3d1y6w47wadap5s5xptc on `company_record` (`stars`);
 create index IDX2psiob2l625wbcjcq6rac7jxd on `company_record` (`sector`);
@@ -369,14 +324,6 @@ create index IDXt84ibbldao4ngscmvo7ja0es on `job` (`final_mode`);
     alter table `job` 
        add constraint UK_7jmfdvs0b0jx7i33qxgv22h7b unique (`reference`);
 create index IDXl7vmp7ocxxv2b7k83lu99fhqs on `lalj_bulletin` (`moment_of_event`);
-create index IDXq2o9psuqfuqmq59f0sq57x9uf on `offer` (`deadline`);
-
-    alter table `offer` 
-       add constraint UK_iex7e8fs0fh89yxpcnm1orjkm unique (`ticker`);
-create index IDXlrvsw21ylkdqa1shrkwg1yssx on `request` (`deadline`);
-
-    alter table `request` 
-       add constraint UK_9mxq3powq8tqctclj0fbi2nih unique (`ticker`);
 
     alter table `user_account` 
        add constraint UK_castjbvpeeus0r8lbpehiu0e4 unique (`username`);
@@ -436,11 +383,6 @@ create index IDXlrvsw21ylkdqa1shrkwg1yssx on `request` (`deadline`);
        foreign key (`sponsor_id`) 
        references `sponsor` (`id`);
 
-    alter table `consumer` 
-       add constraint FK_6cyha9f1wpj0dpbxrrjddrqed 
-       foreign key (`user_account_id`) 
-       references `user_account` (`id`);
-
     alter table `duty` 
        add constraint `FKs2uoxh4i5ya8ptyefae60iao1` 
        foreign key (`job_id`) 
@@ -485,11 +427,6 @@ create index IDXlrvsw21ylkdqa1shrkwg1yssx on `request` (`deadline`);
        add constraint `FKgddyc36rp2p6av1d3w529nf6e` 
        foreign key (`thread_id`) 
        references `message_thread` (`id`);
-
-    alter table `provider` 
-       add constraint FK_b1gwnjqm6ggy9yuiqm0o4rlmd 
-       foreign key (`user_account_id`) 
-       references `user_account` (`id`);
 
     alter table `sponsor` 
        add constraint `FK28mvxtnmfjcwiw34vs8ryqkpa` 

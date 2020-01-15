@@ -23,6 +23,9 @@ sponsor.commercialBanner.form.button.create = Create commercial banner
 sponsor.commercialBanner.form.button.update = Update commercial banner
 sponsor.commercialBanner.form.button.delete = Delete commercial banner
 
+sponsor.commercialBanner.error.expirationYear = The year must be equal or posterior than current year, please update your credit card
+sponsor.commercialBanner.error.expirationMonth = The month must be equal or posterior than current month, please update your credit card
+
 sponsor.commercialBanner.form.button.return = Return
 
 sponsor.commercialBanner.error.spam = This piece of text contains spam

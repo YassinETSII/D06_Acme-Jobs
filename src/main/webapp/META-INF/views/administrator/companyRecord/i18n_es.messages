@@ -27,3 +27,4 @@ administrator.companyRecord.error.administratorPhoneFormat = El teléfono debe t
 ########################################### Feature: administrador lista registros de compañías.
 administrator.companyRecord.list.label.company = Compañía
 administrator.companyRecord.list.label.sector = Sector
+administrator.companyRecord.list.label.stars = Estrellas

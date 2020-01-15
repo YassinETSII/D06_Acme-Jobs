@@ -48,6 +48,10 @@ public class AuthenticatedParticipationCreateService implements AbstractCreateSe
 		model.setAttribute("users", users);
 		model.setAttribute("messageThreadId", request.getModel().getInteger("messageThreadId"));
 
+		boolean allUsersIn;
+		allUsersIn = users.isEmpty();
+		model.setAttribute("allUsersIn", allUsersIn);
+
 	}
 
 	@Override
@@ -57,7 +61,7 @@ public class AuthenticatedParticipationCreateService implements AbstractCreateSe
 		assert errors != null;
 		Authenticated participant = this.repository.findOneAuthenticatedById(request.getModel().getInteger("participant"));
 		entity.setParticipant(participant);
-		request.bind(entity, errors, "participant");
+		request.bind(entity, errors, "thread.title", "participant");
 	}
 
 	@Override

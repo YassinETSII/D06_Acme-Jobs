@@ -53,10 +53,14 @@ public class AdministratorChartShowService implements AbstractShowService<Admini
 		assert request != null;
 		Chart result = new Chart();
 
-		Calendar calendar;
-		calendar = new GregorianCalendar();
-		calendar.add(Calendar.WEEK_OF_MONTH, -4);
-		Date fourWeeks = calendar.getTime();
+		Calendar fourWeekAgoCalendar;
+		fourWeekAgoCalendar = new GregorianCalendar();
+		fourWeekAgoCalendar.add(Calendar.WEEK_OF_MONTH, -4);
+		Date fourWeekAgo = fourWeekAgoCalendar.getTime();
+
+		Calendar todayCalendar;
+		todayCalendar = new GregorianCalendar();
+		Date today = todayCalendar.getTime();
 
 		DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
 
@@ -115,27 +119,45 @@ public class AdministratorChartShowService implements AbstractShowService<Admini
 		result.setRatioOfApplications(ratioOfApplications);
 		result.setApplicationStatus(applicationStatus);
 		//--------------------------------------------------pending applications
-		Collection<Object[]> pending = this.repository.numPendingApplicationsPerDays(fourWeeks);
+		Date currentPending = fourWeekAgo;
+		while (currentPending.before(today) || currentPending.equals(today)) {
+			countPendingApplications.add(this.repository.numPendingApplicationsPerDays(currentPending));
+			momentPendingApplications.add(currentPending);
 
-		pending.stream().forEach(p -> countPendingApplications.add((Long) p[0]));
-		pending.stream().forEach(p -> momentPendingApplications.add((Date) p[1]));
+			Calendar calendarPending = Calendar.getInstance();
+			calendarPending.setTime(currentPending);
+			calendarPending.add(Calendar.DATE, 1);
+			currentPending = calendarPending.getTime();
+		}
 
 		result.setCountPendingApplications(countPendingApplications);
 		result.setMomentPendingApplications(momentPendingApplications.stream().map(m -> formatter.format(m)).collect(Collectors.toList()));
 
 		//--------------------------------------------------accepted applications
-		Collection<Object[]> accepted = this.repository.numAcceptedApplicationsPerDays(fourWeeks);
+		Date currentAccepted = fourWeekAgo;
+		while (currentAccepted.before(today) || currentAccepted.equals(today)) {
+			countAcceptedApplications.add(this.repository.numAcceptedApplicationsPerDays(currentAccepted));
+			momentAcceptedApplications.add(currentAccepted);
 
-		accepted.stream().forEach(a -> countAcceptedApplications.add((Long) a[0]));
-		accepted.stream().forEach(a -> momentAcceptedApplications.add((Date) a[1]));
+			Calendar calendarAccepted = Calendar.getInstance();
+			calendarAccepted.setTime(currentAccepted);
+			calendarAccepted.add(Calendar.DATE, 1);
+			currentAccepted = calendarAccepted.getTime();
+		}
 
 		result.setCountAcceptedApplications(countAcceptedApplications);
 		result.setMomentAcceptedApplications(momentAcceptedApplications.stream().map(m -> formatter.format(m)).collect(Collectors.toList()));
 		//--------------------------------------------------rejected applications
-		Collection<Object[]> rejected = this.repository.numRejectedApplicationsPerDays(fourWeeks);
+		Date currentRejected = fourWeekAgo;
+		while (currentRejected.before(today) || currentRejected.equals(today)) {
+			countRejectedApplications.add(this.repository.numRejectedApplicationsPerDays(currentRejected));
+			momentRejectedApplications.add(currentRejected);
 
-		rejected.stream().forEach(r -> countRejectedApplications.add((Long) r[0]));
-		rejected.stream().forEach(r -> momentRejectedApplications.add((Date) r[1]));
+			Calendar calendarRejected = Calendar.getInstance();
+			calendarRejected.setTime(currentRejected);
+			calendarRejected.add(Calendar.DATE, 1);
+			currentRejected = calendarRejected.getTime();
+		}
 
 		result.setCountRejectedApplications(countRejectedApplications);
 		result.setMomentRejectedApplications(momentRejectedApplications.stream().map(m -> formatter.format(m)).collect(Collectors.toList()));

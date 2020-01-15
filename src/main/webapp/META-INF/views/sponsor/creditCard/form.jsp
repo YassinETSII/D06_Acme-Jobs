@@ -17,8 +17,8 @@
 
 <acme:form>
 		<acme:form-textbox code="sponsor.creditCard.form.label.holder" path="holder"/>
-		<acme:form-integer code="sponsor.creditCard.form.label.expirationMonth" path="expirationMonth"/>
-		<acme:form-integer code="sponsor.creditCard.form.label.expirationYear" path="expirationYear"/>
+		<acme:form-integer code="sponsor.creditCard.form.label.expirationMonth" path="expirationMonth" placeholder="12"/>
+		<acme:form-integer code="sponsor.creditCard.form.label.expirationYear" path="expirationYear" placeholder="20"/>
 		<acme:form-textbox code="sponsor.creditCard.form.label.creditCardNumber" path="creditCardNumber"/>	
 		<acme:form-textbox code="sponsor.creditCard.form.label.brand" path="brand"/>	
 		<acme:form-textbox code="sponsor.creditCard.form.label.CVV" path="CVV"/>

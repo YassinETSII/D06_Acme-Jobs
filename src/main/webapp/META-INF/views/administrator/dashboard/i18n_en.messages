@@ -13,16 +13,6 @@ administrator.dashboard.form.label.numberAnnouncements = Number of announcements
 administrator.dashboard.form.label.numberCompanyRecords = Number of Company records:
 administrator.dashboard.form.label.numberInvestorRecords = Number of Investor records:
 
-administrator.dashboard.form.label.minimumNumberOfRewardsOfActiveRequests = Minimum number of rewards of active requests:
-administrator.dashboard.form.label.maximumNumberOfRewardsOfActiveRequests = Maximum number of rewards of active requests:
-administrator.dashboard.form.label.averageNumberOfRewardsOfActiveRequests = Average number of rewards of active requests:
-administrator.dashboard.form.label.standardDesviationNumberOfRewardsOfActiveRequests = Standard desviation number of rewards of active requests:
-
-administrator.dashboard.form.label.minimumNumberOfRewardsOfActiveOffers = Minimum number of rewards of active offers:
-administrator.dashboard.form.label.maximumNumberOfRewardsOfActiveOffers = Maximum number of rewards of active offers:
-administrator.dashboard.form.label.averageNumberOfRewardsOfActiveOffers = Average number of rewards of active offers:
-administrator.dashboard.form.label.standardDesviationNumberOfRewardsOfActiveOffers = Standard desviation number of rewards of active offers:
-
 administrator.dashboard.form.label.averageNumberOfJobsPerEmployer = Average number of jobs per employer:
 administrator.dashboard.form.label.averageNumberOfApplicationsPerEmployer = Average number of applications per employer:
 administrator.dashboard.form.label.averageNumberOfApplicationsPerWorker = Average number of applications per worker:

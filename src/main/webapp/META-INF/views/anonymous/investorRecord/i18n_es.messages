@@ -18,3 +18,4 @@ anonymous.investorRecord.form.button.return = Volver
 ########################################### Feature: anónimo lista registros de inversores
 anonymous.investorRecord.list.label.investor = Inversor
 anonymous.investorRecord.list.label.sector = Sector
+anonymous.investorRecord.list.label.stars = Estrellas

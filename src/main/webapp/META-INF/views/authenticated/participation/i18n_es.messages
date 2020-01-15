@@ -18,5 +18,7 @@ authenticated.participation.form.button.return = Volver
 
 authenticated.participation.error.deleteCreator = No puedes borrar el creador de este hilo
 
+authenticated.participation.form.allUsersInText = No puedes añadir más participantes a este hilo
+
 ########################################### Feature: autenticado lista participantes de un hilo
 authenticated.participation.list.label.userName = Usuario

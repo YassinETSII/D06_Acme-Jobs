@@ -24,6 +24,6 @@ worker.job.form.label.finalMode = Trabajo en modo final
 
 worker.job.form.button.add-application = Aplicarme para este trabajo
 worker.job.form.button.list-duties = Listar deberes
-worker.job.form.button.list-audit-records = List registros de auditoría
+worker.job.form.button.list-audit-records = Listar registros de auditoría
 
 worker.job.form.button.return = Volver

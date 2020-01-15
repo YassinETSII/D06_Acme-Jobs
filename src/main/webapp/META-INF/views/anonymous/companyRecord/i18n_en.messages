@@ -22,3 +22,4 @@ anonymous.companyRecord.form.button.return = Return
 ########################################### Feature: anonymous lists company records.
 anonymous.companyRecord.list.label.company = Company
 anonymous.companyRecord.list.label.sector = Sector
+anonymous.companyRecord.list.label.stars = Stars

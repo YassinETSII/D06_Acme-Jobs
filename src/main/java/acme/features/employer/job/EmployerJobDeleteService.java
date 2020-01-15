@@ -69,7 +69,7 @@ public class EmployerJobDeleteService implements AbstractDeleteService<Employer,
 		assert entity != null;
 		assert errors != null;
 
-		Long nummberWorkers;
+		long nummberWorkers;
 		int idJob;
 		boolean deleteApplicatedJob;
 

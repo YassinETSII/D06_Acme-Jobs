@@ -21,6 +21,8 @@ worker.application.form.label.job.reference = Referencia del trabajo:
 worker.application.form.label.job = Mostrar trabajo
 worker.application.form.button.create = Crear aplicación
 
+worker.application.form.elapsedJob = Lo sentimos, este trabajo ha caducado
+
 worker.application.error.referenceDuplicated = Esta referencia ya está en uso
 
 worker.application.form.button.return = Volver

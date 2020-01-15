@@ -16,6 +16,8 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:form>
+	<acme:form-hidden path="elapsedJob"/>
+
 	<jstl:if test="${command == 'show'}">
 		<acme:form-textbox code="worker.application.form.label.reference" path="reference" placeholder="EEEE-JJJJ:WWWW" readonly="true"/>
 		<acme:form-moment code="worker.application.form.label.moment" path="moment" readonly="true"/>
@@ -32,12 +34,18 @@
 		<acme:form-submit code="worker.application.form.label.job" action="/authenticated/job/show?id=${idJob}" method="get" />
 	</jstl:if>
 	
-	<jstl:if test="${command == 'create'}">
+	<jstl:if test="${command == 'create'  && elapsedJob == false}">
 		<acme:form-textbox code="worker.application.form.label.reference" path="reference" placeholder="EEEE-JJJJ:WWWW"/>
 		<acme:form-textarea code="worker.application.form.label.statement" path="statement"/>
 		<acme:form-textarea code="worker.application.form.label.skills" path="skills"/>
 		<acme:form-textarea code="worker.application.form.label.qualifications" path="qualifications"/>
 		<acme:form-submit code="worker.application.form.button.create" action="/worker/application/create?idJob=${idJob}" method="post"/>
+	</jstl:if>
+	
+	<jstl:if test="${command == 'create' && elapsedJob == true}">
+	<div class="jumbotron">
+			<acme:message code="worker.application.form.elapsedJob"/>
+		</div>
 	</jstl:if>
 		
 		<acme:form-return code="worker.application.form.button.return"/>

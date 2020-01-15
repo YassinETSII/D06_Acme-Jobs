@@ -21,3 +21,4 @@ administrator.investorRecord.form.button.return = Volver
 ########################################### Feature: administrador lista registros de inversores.
 administrator.investorRecord.list.label.investor = Inversor
 administrator.investorRecord.list.label.sector = Sector
+administrator.investorRecord.list.label.stars = Estrellas

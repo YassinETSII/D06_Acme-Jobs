@@ -13,16 +13,6 @@ administrator.dashboard.form.label.numberAnnouncements = Número de anuncios:
 administrator.dashboard.form.label.numberCompanyRecords = Número de registros de compañías:
 administrator.dashboard.form.label.numberInvestorRecords = Número de registros de inversores:
 
-administrator.dashboard.form.label.minimumNumberOfRewardsOfActiveRequests = Mínima recompensa de solicitudes activas:
-administrator.dashboard.form.label.maximumNumberOfRewardsOfActiveRequests = Máxima recompensa de solicitudes activas:
-administrator.dashboard.form.label.averageNumberOfRewardsOfActiveRequests = Media de las recompensas de solicitudes activas:
-administrator.dashboard.form.label.standardDesviationNumberOfRewardsOfActiveRequests = Desviación estándar de las recompensas de solicitudes activas:
-
-administrator.dashboard.form.label.minimumNumberOfRewardsOfActiveOffers = Mínima recompensa de ofertas activas:
-administrator.dashboard.form.label.maximumNumberOfRewardsOfActiveOffers = Máxima recompensa de ofertas activas:
-administrator.dashboard.form.label.averageNumberOfRewardsOfActiveOffers = Media de las recompensas de ofertas activas:
-administrator.dashboard.form.label.standardDesviationNumberOfRewardsOfActiveOffers = Desviación estándar de las recompensas de ofertas activas:
-
 administrator.dashboard.form.label.averageNumberOfJobsPerEmployer = Media de trabajos por empleador:
 administrator.dashboard.form.label.averageNumberOfApplicationsPerEmployer = Media de aplicaciones por empleador:
 administrator.dashboard.form.label.averageNumberOfApplicationsPerWorker = Media de aplicaciones por trabajador:

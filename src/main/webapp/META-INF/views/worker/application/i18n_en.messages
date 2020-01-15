@@ -21,6 +21,8 @@ worker.application.form.label.job.reference = Job reference:
 worker.application.form.label.job = Show it's Job
 worker.application.form.button.create = Create application
 
+worker.application.form.elapsedJob = Sorry, this job is elapsed
+
 worker.application.error.referenceDuplicated = This reference is already in use
 
 worker.application.form.button.return = Return

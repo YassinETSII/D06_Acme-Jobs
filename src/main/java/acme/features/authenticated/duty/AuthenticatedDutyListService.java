@@ -1,10 +1,7 @@
 
 package acme.features.authenticated.duty;
 
-import java.util.Calendar;
 import java.util.Collection;
-import java.util.Date;
-import java.util.GregorianCalendar;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,7 +24,7 @@ public class AuthenticatedDutyListService implements AbstractListService<Authent
 	// AbstractListService<Authenticated, Duty> interface --------------
 
 
-	//An authenticated principal can not list the duties of not finalMode jobs. Neither to elapsed ones.
+	//An authenticated principal can not list the duties of not finalMode jobs.
 	@Override
 	public boolean authorise(final Request<Duty> request) {
 		assert request != null;
@@ -36,13 +33,9 @@ public class AuthenticatedDutyListService implements AbstractListService<Authent
 		int idJob;
 		Job job;
 
-		Calendar c = new GregorianCalendar();
-		Date d = c.getTime();
-
 		idJob = request.getModel().getInteger("idJob");
 		job = this.repository.findOneJobById(idJob);
-		boolean elapsedDeadline = job.getDeadline().before(d);
-		result = job.isFinalMode() == true && !elapsedDeadline;
+		result = job.isFinalMode() == true;
 		return result;
 	}
 

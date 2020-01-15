@@ -18,5 +18,7 @@ authenticated.participation.form.button.return = Return
 
 authenticated.participation.error.deleteCreator = You can't delete the creator of this message thread
 
+authenticated.participation.form.allUsersInText = You can't add any more users in this thread.
+
 ########################################### Feature: authenticated lists a message thread's participants
 authenticated.participation.list.label.userName = User

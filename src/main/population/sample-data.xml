@@ -161,67 +161,6 @@
 		<property name="moment" value="2019/10/06 18:15"/>
 		<property name="moreInfo" value="https://www.infojobs.net/"/>
 		<property name="text" value="We need a coach for motivate our testing team."/>
-	</bean>
-	
-	<!--  Requests -->
-	
-	<bean id="request01" class="acme.entities.requests.Request">
-		<property name="title" value="Request for the vacant of java programmer"/>
-		<property name="moment" value="2019/09/25 18:52"/>
-		<property name="deadline" value="2020/10/25 22:00"/>
-		<property name="text" value="Hi, this is my request for the job."/>
-		<property name="reward" value="2400.0 EUR"/>
-		<property name="ticker" value="RXJAB-45312"/>		
-	</bean>
-	
-	<bean id="request02" class="acme.entities.requests.Request">
-		<property name="title" value="Request for the vacant of python analyst"/>
-		<property name="moment" value="2019/03/02 13:15"/>
-		<property name="deadline" value="2020/01/12 12:00"/>
-		<property name="text" value="Hi there, this is my request for the job."/>
-		<property name="reward" value="2000.0 EUR"/>
-		<property name="ticker" value="RfJAa-45313"/>		
-	</bean>	
-	
-	<bean id="request03" class="acme.entities.requests.Request">
-		<property name="title" value="Request for the vacant of business intelligence analyst"/>
-		<property name="moment" value="2019/09/25 18:52"/>
-		<property name="deadline" value="2020/10/25 22:00"/>
-		<property name="text" value="Hi, this is my request."/>
-		<property name="reward" value="1000.0 EUR"/>
-		<property name="ticker" value="RCgAn-65572"/>		
-	</bean>	
-	
-	<!--  Offers -->
-	
-	<bean id="offer01" class="acme.entities.offers.Offer">
-		<property name="title" value="Offer for the vacant of java programmer"/>
-		<property name="moment" value="2019/09/25 18:52"/>
-		<property name="deadline" value="2020/10/25 22:00"/>
-		<property name="text" value="This is the offer for the job."/>
-		<property name="minReward" value="900.0 EUR"/>
-		<property name="maxReward" value="1600.0 EUR"/>
-		<property name="ticker" value="OXJAB-45312"/>		
-	</bean>
-	
-	<bean id="offer02" class="acme.entities.offers.Offer">
-		<property name="title" value="Offer for the vacant of python analyst"/>
-		<property name="moment" value="2019/03/02 13:15"/>
-		<property name="deadline" value="2020/01/12 12:00"/>
-		<property name="text" value="This is the offer for the job."/>
-		<property name="minReward" value="1400.0 EUR"/>
-		<property name="maxReward" value="1800.0 EUR"/>
-		<property name="ticker" value="OfJAa-45313"/>		
-	</bean>	
-	
-	<bean id="offer03" class="acme.entities.offers.Offer">
-		<property name="title" value="Offer for the vacant of business intelligence analyst"/>
-		<property name="moment" value="2019/09/25 18:52"/>
-		<property name="deadline" value="2020/10/25 22:00"/>
-		<property name="text" value="This is the offer for the job."/>
-		<property name="minReward" value="500.0 EUR"/>
-		<property name="maxReward" value="1500.0 EUR"/>
-		<property name="ticker" value="OCgAn-65572"/>		
 	</bean>	
 	
 	<!-- Company records -->
@@ -381,68 +320,6 @@
 		<property name="goldReward" value="4000.0 EUR"/>
 		<property name="silverReward" value="1800.0 EUR"/>
 		<property name="bronzeReward" value="200.0 EUR"/>
-	</bean>
-
-	<!-- Providers -->
-	
-	<bean name="provider1UserAccount" class="acme.framework.entities.UserAccount">
-		<property name="username" value="provider1" />
-		<property name="password" value="provider1" />
-		<property name="enabled" value="true" />
-		<property name="identity">
-			<bean class="acme.datatypes.UserIdentity">
-				<property name="name" value="Provider" />
-				<property name="surname" value="One" />
-				<property name="email" value="provider1@mail.com" />
-			</bean>
-		</property>
-		<property name="roles">
-			<list>
-				<ref bean="provider1Provider" />
-				<ref bean="provider1Authenticated" />
-			</list>
-		</property>	
-	</bean>
-	
-	<bean name="provider1Provider" class="acme.entities.roles.Provider">
-		<property name="company" value="provider 1, Inc." />
-		<property name="sector" value="Sector 1" />
-		<property name="userAccount" ref="provider1UserAccount" />	
-	</bean>
-	
-	<bean name="provider1Authenticated" class="acme.framework.entities.Authenticated">
-		<property name="userAccount" ref="provider1UserAccount" />
-	</bean>
-	
-	<!-- Consumers -->
-	
-	<bean name="consumer1UserAccount" class="acme.framework.entities.UserAccount">
-		<property name="username" value="consumer1" />
-		<property name="password" value="consumer1" />
-		<property name="enabled" value="true" />
-		<property name="identity">
-			<bean class="acme.datatypes.UserIdentity">
-				<property name="name" value="Consumer" />
-				<property name="surname" value="One" />
-				<property name="email" value="consumer1@mail.com" />
-			</bean>
-		</property>
-		<property name="roles">
-			<list>
-				<ref bean="consumer1Consumer" />
-				<ref bean="consumer1Authenticated" />
-			</list>
-		</property>	
-	</bean>
-	
-	<bean name="consumer1Consumer" class="acme.entities.roles.Consumer">
-		<property name="company" value="Consumer 1, Inc." />
-		<property name="sector" value="Sector 1" />
-		<property name="userAccount" ref="consumer1UserAccount" />	
-	</bean>
-	
-	<bean name="consumer1Authenticated" class="acme.framework.entities.Authenticated">
-		<property name="userAccount" ref="consumer1UserAccount" />
 	</bean>
 	
 	<!-- Employers -->
@@ -695,8 +572,8 @@
 	
 	<bean id="job1app1" class="acme.entities.applications.Application">
 		<property name="reference" value="EMP1-JOB1-WOR1"/>
-		<property name="moment" value="2019/12/11 23:59"/>
-		<property name="updateMoment" value="2019/12/13 23:59"/>
+		<property name="moment" value="2020/01/11 23:59"/>
+		<property name="updateMoment" value="2020/01/13 23:59"/>
 		<property name="status" value="accepted"/>
 		<property name="statement" value="Statement 1"/>
 		<property name="skills" value="Skills 1"/>
@@ -708,8 +585,8 @@
 	
 	<bean id="job1app2" class="acme.entities.applications.Application">
 		<property name="reference" value="EMP1-JOB1-WOR2"/>
-		<property name="moment" value="2019/12/14 23:59"/>
-		<property name="updateMoment" value="2019/12/15 23:59"/>
+		<property name="moment" value="2020/01/11 23:59"/>
+		<property name="updateMoment" value="2020/01/12 23:59"/>
 		<property name="status" value="accepted"/>
 		<property name="statement" value="Statement 3"/>
 		<property name="skills" value="Skills 3"/>
@@ -721,8 +598,8 @@
 	
 	<bean id="job3app1" class="acme.entities.applications.Application">
 		<property name="reference" value="EMP1-JOB3-WOR1"/>
-		<property name="moment" value="2019/12/15 23:59"/>
-		<property name="updateMoment" value="2019/12/16 23:59"/>
+		<property name="moment" value="2020/01/04 23:59"/>
+		<property name="updateMoment" value="2020/01/08 23:59"/>
 		<property name="status" value="rejected"/>
 		<property name="statement" value="Statement 4"/>
 		<property name="skills" value="Skills 4"/>
@@ -734,8 +611,8 @@
 	
 	<bean id="job4app1" class="acme.entities.applications.Application">
 		<property name="reference" value="EMP2-JOB4-WOR2"/>
-		<property name="moment" value="2019/04/11 23:59"/>
-		<property name="updateMoment" value="2019/04/11 23:59"/>
+		<property name="moment" value="2020/01/13 23:59"/>
+		<property name="updateMoment" value="2020/01/13 23:59"/>
 		<property name="status" value="pending"/>
 		<property name="statement" value="Statement 5"/>
 		<property name="skills" value="Skills 5"/>
@@ -747,8 +624,8 @@
 	</bean>
 		<bean id="job2app1" class="acme.entities.applications.Application">
 		<property name="reference" value="EMP1-JOB2-WOR1"/>
-		<property name="moment" value="2019/12/14 23:59"/>
-		<property name="updateMoment" value="2019/12/14 23:59"/>
+		<property name="moment" value="2020/01/13 23:59"/>
+		<property name="updateMoment" value="2020/01/13 23:59"/>
 		<property name="status" value="pending"/>
 		<property name="statement" value="Statement 2"/>
 		<property name="skills" value="Skills 2"/>
@@ -760,8 +637,8 @@
 	
 	<bean id="job2app3" class="acme.entities.applications.Application">
 		<property name="reference" value="EMP1-JOB2-WOR2"/>
-		<property name="moment" value="2019/12/14 23:59"/>
-		<property name="updateMoment" value="2019/12/14 23:59"/>		
+		<property name="moment" value="2020/01/12 23:59"/>
+		<property name="updateMoment" value="2020/01/12 23:59"/>		
 		<property name="status" value="pending"/>
 		<property name="statement" value="Statement 7"/>
 		<property name="skills" value="Skills 7"/>
@@ -773,8 +650,8 @@
 	
 	<bean id="job3app2" class="acme.entities.applications.Application">
 		<property name="reference" value="EMP1-JOB3-WOR2"/>
-		<property name="moment" value="2019/12/16 23:59"/>
-		<property name="updateMoment" value="2019/12/16 23:59"/>		
+		<property name="moment" value="2020/01/11 23:59"/>
+		<property name="updateMoment" value="2020/01/11 23:59"/>		
 		<property name="status" value="pending"/>
 		<property name="statement" value="Statement 6"/>
 		<property name="skills" value="Skills 6"/>
@@ -786,8 +663,8 @@
 	
 	<bean id="job4app2" class="acme.entities.applications.Application">
 		<property name="reference" value="EMP2-JOB4-WOR1"/>
-		<property name="moment" value="2019/12/15 23:59"/>
-		<property name="updateMoment" value="2019/12/16 23:59"/>		
+		<property name="moment" value="2020/01/07 22:59"/>
+		<property name="updateMoment" value="2020/01/08 23:59"/>		
 		<property name="status" value="rejected"/>
 		<property name="statement" value="Statement 8"/>
 		<property name="skills" value="Skills 8"/>
@@ -904,60 +781,6 @@
 		<property name="job" ref="job03"/>
 	</bean>
 	
-	<!-- Message Threads -->
-	
-	<bean id="messageThread01" class="acme.entities.messageThreads.MessageThread">
-		<property name="title" value="Title 1"/>
-		<property name="moment" value="2017/12/11 23:59"/>
-		<property name="creator" ref="employer1Authenticated"/>
-	</bean>
-	
-	<!-- Participations -->
-	
-	<bean id="thread01employer1participation" class="acme.entities.participations.Participation">
-		<property name="thread" ref="messageThread01"/>
-		<property name="participant" ref="employer1Authenticated"/>
-	</bean>
-	
-	<bean id="thread01consumer1participation" class="acme.entities.participations.Participation">
-		<property name="thread" ref="messageThread01"/>
-		<property name="participant" ref="consumer1Authenticated"/>
-	</bean>
-	
-	<bean id="thread01provider1participation" class="acme.entities.participations.Participation">
-		<property name="thread" ref="messageThread01"/>
-		<property name="participant" ref="provider1Authenticated"/>
-	</bean>
-	
-	<!-- Messages -->
-	
-	<bean id="message01" class="acme.entities.messages.Message">
-		<property name="title" value="Title 1"/>
-		<property name="moment" value="2017/12/11 23:59"/>
-		<property name="tags" value="tag1, tag2, tag3"/>
-		<property name="body" value="this is a pretty message"/>
-		<property name="user" ref="consumer1Authenticated"/>
-		<property name="messageThread" ref="messageThread01"/>
-	</bean>
-	
-	<bean id="message02" class="acme.entities.messages.Message">
-		<property name="title" value="Title 2"/>
-		<property name="moment" value="2017/12/11 23:59"/>
-		<property name="tags" value="tag1, tag2, tag3"/>
-		<property name="body" value="this is a pretty message"/>
-		<property name="user" ref="provider1Authenticated"/>			
-		<property name="messageThread" ref="messageThread01"/>		
-	</bean>
-	
-	<bean id="message03" class="acme.entities.messages.Message">
-		<property name="title" value="Title 3"/>
-		<property name="moment" value="2017/12/11 23:59"/>
-		<property name="tags" value="tag1, tag2, tag3"/>
-		<property name="body" value="this is a pretty message"/>
-		<property name="user" ref="employer1Authenticated"/>	
-		<property name="messageThread" ref="messageThread01"/>		
-	</bean>
-	
 	<!-- Credit cards -->
 	
 	<bean name="creditCard01" class="acme.entities.creditCards.CreditCard">
@@ -1067,35 +890,89 @@
 		<property name="userAccount" ref="sponsor3UserAccount" />
 	</bean>
 	
+	<!-- Message Threads -->
+	
+	<bean id="messageThread01" class="acme.entities.messageThreads.MessageThread">
+		<property name="title" value="Title 1"/>
+		<property name="moment" value="2017/12/11 23:59"/>
+		<property name="creator" ref="employer1Authenticated"/>
+	</bean>
+	
+	<!-- Participations -->
+	
+	<bean id="thread01employer1participation" class="acme.entities.participations.Participation">
+		<property name="thread" ref="messageThread01"/>
+		<property name="participant" ref="employer1Authenticated"/>
+	</bean>
+	
+	<bean id="thread01employer2participation" class="acme.entities.participations.Participation">
+		<property name="thread" ref="messageThread01"/>
+		<property name="participant" ref="employer2Authenticated"/>
+	</bean>
+	
+	<bean id="thread01sponsor1participation" class="acme.entities.participations.Participation">
+		<property name="thread" ref="messageThread01"/>
+		<property name="participant" ref="sponsor1Authenticated"/>
+	</bean>
+	
+	<!-- Messages -->
+	
+	<bean id="message01" class="acme.entities.messages.Message">
+		<property name="title" value="Title 1"/>
+		<property name="moment" value="2017/12/11 23:59"/>
+		<property name="tags" value="tag1, tag2, tag3"/>
+		<property name="body" value="this is a pretty message"/>
+		<property name="user" ref="employer2Authenticated"/>
+		<property name="messageThread" ref="messageThread01"/>
+	</bean>
+	
+	<bean id="message02" class="acme.entities.messages.Message">
+		<property name="title" value="Title 2"/>
+		<property name="moment" value="2017/12/11 23:59"/>
+		<property name="tags" value="tag1, tag2, tag3"/>
+		<property name="body" value="this is a pretty message"/>
+		<property name="user" ref="sponsor1Authenticated"/>			
+		<property name="messageThread" ref="messageThread01"/>		
+	</bean>
+	
+	<bean id="message03" class="acme.entities.messages.Message">
+		<property name="title" value="Title 3"/>
+		<property name="moment" value="2017/12/11 23:59"/>
+		<property name="tags" value="tag1, tag2, tag3"/>
+		<property name="body" value="this is a pretty message"/>
+		<property name="user" ref="employer1Authenticated"/>	
+		<property name="messageThread" ref="messageThread01"/>		
+	</bean>
+	
 	<!-- Banners -->	
 	<bean id="commercialBanner01" class="acme.entities.banners.CommercialBanner">	
-		<property name="picture" value="https://www.tumblr.com/commercialBannerSample01"/>	
-		<property name="slogan" value="commercial banner slogan sample 1"/>	
-		<property name="URL" value="https://www.tumblr.com"/>	
+		<property name="picture" value="https://colaninfotech.com/wp-content/uploads/2019/01/Spring_Banner.png"/>	
+		<property name="slogan" value="Spring framework"/>	
+		<property name="URL" value="https://www.acme.com"/>	
 		<property name="creditCard" ref = "creditCard01"/>	
 		<property name="sponsor" ref="sponsor1Sponsor" />	
 	</bean>		
 		
 	<bean id="commercialBanner02" class="acme.entities.banners.CommercialBanner">	
-		<property name="picture" value="https://www.tumblr.com/commercialBannerSample02"/>	
-		<property name="slogan" value="commercial banner slogan sample 2"/>	
-		<property name="URL" value="https://www.tumblr.com"/>	
+		<property name="picture" value="https://www.thewrap.com/wp-content/uploads/files/main_image/netflix-banner.jpg"/>	
+		<property name="slogan" value="Netflix and chill"/>	
+		<property name="URL" value="https://www.acme.com"/>	
 		<property name="creditCard" ref = "creditCard02"/>	
 		<property name="sponsor" ref="sponsor3Sponsor" />	
 	</bean>	
 	
 	<bean id="nonCommercialBanner01" class="acme.entities.banners.NonCommercialBanner">
-		<property name="picture" value="https://www.tumblr.com/NonCommercialBannerSample01"/>
-		<property name="slogan" value="non commercial banner slogan sample 1"/>
-		<property name="URL" value="https://www.tumblr.com"/>
+		<property name="picture" value="https://i.imgur.com/NGLSjk6.png"/>
+		<property name="slogan" value="What would you change?"/>
+		<property name="URL" value="https://www.acme.com"/>
 		<property name="jingle" value="a beautiful jingle sample 1"/>
 		<property name="sponsor" ref="sponsor2Sponsor" />
 	</bean>	
 	
 		<bean id="nonCommercialBanner02" class="acme.entities.banners.NonCommercialBanner">
-		<property name="picture" value="https://www.tumblr.com/NonCommercialBannerSample02"/>
-		<property name="slogan" value="non commercial banner slogan sample 2"/>
-		<property name="URL" value="https://www.tumblr.com"/>
+		<property name="picture" value="https://i.imgur.com/8YcXhS0.png"/>
+		<property name="slogan" value="Our planet needs superheroes like you"/>
+		<property name="URL" value="https://www.acme.com"/>
 		<property name="jingle" value="a beautiful jingle sample 2"/>
 		<property name="sponsor" ref="sponsor1Sponsor" />
 	</bean>	
