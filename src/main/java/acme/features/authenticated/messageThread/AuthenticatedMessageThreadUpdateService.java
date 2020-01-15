@@ -53,7 +53,7 @@ public class AuthenticatedMessageThreadUpdateService implements AbstractUpdateSe
 		assert entity != null;
 		assert errors != null;
 
-		request.bind(entity, errors);
+		request.bind(entity, errors, "moment", "creator.identity.fullName");
 
 	}
 

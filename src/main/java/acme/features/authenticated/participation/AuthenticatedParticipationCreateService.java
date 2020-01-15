@@ -57,7 +57,7 @@ public class AuthenticatedParticipationCreateService implements AbstractCreateSe
 		assert errors != null;
 		Authenticated participant = this.repository.findOneAuthenticatedById(request.getModel().getInteger("participant"));
 		entity.setParticipant(participant);
-		request.bind(entity, errors, "participant");
+		request.bind(entity, errors, "thread.title", "participant");
 	}
 
 	@Override
