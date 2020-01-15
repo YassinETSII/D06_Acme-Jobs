@@ -15,6 +15,8 @@ auditor.auditRecord.form.label.body = Cuerpo:
 auditor.auditRecord.form.label.finalMode = Publicado
 auditor.auditRecord.form.label.job = Trabajo:
 
+auditor.auditRecord.form.elapsedJob = Lo sentimos, este trabajo ha caducado
+
 auditor.auditRecord.form.button.create = Crear registro de auditoría
 auditor.auditRecord.form.button.update = Actualizar registro de auditoría
 auditor.auditRecord.form.button.delete = Borra registro de auditoría

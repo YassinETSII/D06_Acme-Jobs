@@ -26,7 +26,7 @@ public interface EmployerJobRepository extends AbstractRepository {
 	Employer findOneEmployerById(int id);
 
 	@Query("select count(a.worker) from Application a where a.job.id = ?1")
-	Long countWorkersByJobId(int id);
+	long countWorkersByJobId(int id);
 
 	@Query("select j from Job j where j.employer.id = ?1")
 	Collection<Job> findManyJobsByEmployerId(int employerId);

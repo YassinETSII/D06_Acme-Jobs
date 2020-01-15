@@ -1,6 +1,10 @@
 
 package acme.features.auditor.auditRecord;
 
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -47,7 +51,13 @@ public class AuditorAuditRecordUpdateService implements AbstractUpdateService<Au
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "title", "body", "finalMode", "job.reference");
+		request.unbind(entity, model, "title", "body", "finalMode", "job.reference", "moment");
+
+		Calendar c = new GregorianCalendar();
+		Date d = c.getTime();
+
+		boolean elapsedJob = entity.getJob().getDeadline().before(d);
+		model.setAttribute("elapsedJob", elapsedJob);
 
 	}
 

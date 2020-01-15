@@ -17,6 +17,10 @@
 
 <acme:form>
 	
+	<acme:form-hidden path="elapsedJob"/>
+
+	<jstl:if test="${elapsedJob == false}">
+
 	<acme:form-textbox code="auditor.auditRecord.form.label.title" path="title"/>
 	<jstl:if test="${command != 'create'}">
 		<acme:form-moment 
@@ -53,6 +57,21 @@
 	<acme:form-submit test="${command == 'delete'}"
 		code="auditor.auditRecord.form.button.delete" 
 		action="/auditor/audit-record/delete"/>
+	
+	</jstl:if>
+	
+	<jstl:if test="${elapsedJob == true && command == 'show'}">
+	<acme:form-textbox code="auditor.auditRecord.form.label.title" path="title" readonly="true"/>
+	<acme:form-textarea code="auditor.auditRecord.form.label.body" path="body" readonly="true"/>
+	<acme:form-textbox code="auditor.auditRecord.form.label.job" path="job.reference" readonly="true"/>
+	<acme:form-checkbox code="auditor.auditRecord.form.label.finalMode" path="finalMode" readonly="true"/>
+	</jstl:if>
+	
+	<jstl:if test="${elapsedJob == true && (command == 'create' || command == 'update' || command == 'delete')}">
+		<div class="jumbotron">
+			<acme:message code="auditor.auditRecord.form.elapsedJob"/>
+		</div>
+	</jstl:if>
 		
 	<acme:form-return code="auditor.auditRecord.form.button.return"/>
 </acme:form>
