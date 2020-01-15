@@ -1,7 +1,10 @@
 
 package acme.features.worker.job;
 
+import java.util.Calendar;
 import java.util.Collection;
+import java.util.Date;
+import java.util.GregorianCalendar;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -43,8 +46,11 @@ public class WorkerJobListNotAppliedService implements AbstractListService<Worke
 	public Collection<Job> findMany(final Request<Job> request) {
 		assert request != null;
 
+		Calendar c = new GregorianCalendar();
+		Date d = c.getTime();
+
 		Collection<Job> result;
-		result = this.repository.findManyNotAppliedJobs(request.getPrincipal().getActiveRoleId());
+		result = this.repository.findManyNotAppliedJobs(d, request.getPrincipal().getActiveRoleId());
 
 		return result;
 

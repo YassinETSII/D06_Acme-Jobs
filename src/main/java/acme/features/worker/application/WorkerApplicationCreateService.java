@@ -1,7 +1,9 @@
 
 package acme.features.worker.application;
 
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -51,6 +53,12 @@ public class WorkerApplicationCreateService implements AbstractCreateService<Wor
 
 		int idJob = request.getModel().getInteger("idJob");
 		model.setAttribute("idJob", idJob);
+
+		Calendar c = new GregorianCalendar();
+		Date d = c.getTime();
+
+		boolean elapsedJob = entity.getJob().getDeadline().before(d);
+		model.setAttribute("elapsedJob", elapsedJob);
 	}
 
 	@Override

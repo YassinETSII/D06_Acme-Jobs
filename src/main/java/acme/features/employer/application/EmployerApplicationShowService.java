@@ -52,8 +52,6 @@ public class EmployerApplicationShowService implements AbstractShowService<Emplo
 		int idJob = entity.getJob().getId();
 		model.setAttribute("idJob", idJob);
 
-		int idWorker = entity.getWorker().getId();
-		model.setAttribute("idWorker", idWorker);
 	}
 
 	@Override

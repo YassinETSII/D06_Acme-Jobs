@@ -26,7 +26,6 @@
 		<acme:form-textbox code="employer.application.form.label.job.reference" path="job.reference" readonly="true"/>
 		<acme:form-textbox code="employer.application.form.label.applierWorker" path="worker.identity.fullName" readonly="true"/>
 		<acme:form-hidden path="idJob"/>	
-		<acme:form-hidden path="idWorker"/>	
 		
 		<acme:form-select code="employer.application.form.label.status" path="status">
 				<acme:form-option code="ACCEPT" value="accepted"/>
@@ -46,7 +45,6 @@
 		<acme:form-textbox code="employer.application.form.label.job.reference" path="job.reference" readonly="true"/>
 		<acme:form-textbox code="employer.application.form.label.applierWorker" path="worker.identity.fullName" readonly="true"/>
 		<acme:form-hidden path="idJob"/>	
-		<acme:form-hidden path="idWorker"/>	
 	</jstl:if>		
 	
 		<acme:form-submit code="employer.application.form.label.job" action="/employer/job/show?id=${idJob}" method="get" />
