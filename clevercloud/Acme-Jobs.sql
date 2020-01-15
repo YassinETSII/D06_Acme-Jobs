@@ -120,8 +120,6 @@ CREATE TABLE `application` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `UK_ct7r18vvxl5g4c4k7aefpa4do` (`reference`),
   KEY `IDX2q2747fhp099wkn3j2yt05fhs` (`status`),
-  KEY `IDXavmpyh8rpetaj6xntvliy5nm1` (`reference`,`status`,`moment` DESC),
-  KEY `IDXdwumdwpjcwdk1mef9ua69yc2p` (`reference`),
   KEY `IDX5wwxv107kvi5si12nh4226lnx` (`status`,`moment`),
   KEY `IDXmkqdesfsvt4p9ctfgcei9yjcy` (`status`,`update_moment`),
   KEY `FKoa6p4s2oyy7tf80xwc4r04vh6` (`job_id`),
@@ -217,8 +215,8 @@ CREATE TABLE `auditor_request` (
   `status` varchar(255) DEFAULT NULL,
   `user_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
+  UNIQUE KEY `UK_emf8dnwjroe97odrlcsuk1nwo` (`user_id`),
   KEY `IDX7u6rn1f09a74ihkev0ltgqy1j` (`status`),
-  KEY `FK49gx0x5hlvlehwyvgesb15kw3` (`user_id`),
   CONSTRAINT `FK49gx0x5hlvlehwyvgesb15kw3` FOREIGN KEY (`user_id`) REFERENCES `authenticated` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -282,6 +280,7 @@ CREATE TABLE `banner` (
 
 LOCK TABLES `banner` WRITE;
 /*!40000 ALTER TABLE `banner` DISABLE KEYS */;
+INSERT INTO `banner` VALUES (7,0,'https://i.imgur.com/8YcXhS0.png','https://i.imgur.com/8YcXhS0.png','Our planet needs superheroes like you'),(8,0,'https://i.imgur.com/NGLSjk6.png','https://i.imgur.com/NGLSjk6.png','What would you change?'),(9,0,'https://i.imgur.com/2eVF1HG.png','https://i.imgur.com/2eVF1HG.png','Afoprodei'),(10,0,'https://i.imgur.com/fihihcF.png','https://i.imgur.com/fihihcF.png','Fundación infantil'),(11,0,'https://i.imgur.com/MtBRoNP.png','https://i.imgur.com/MtBRoNP.png','Medecins sans frontieres');
 /*!40000 ALTER TABLE `banner` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -385,34 +384,6 @@ CREATE TABLE `company_record` (
 LOCK TABLES `company_record` WRITE;
 /*!40000 ALTER TABLE `company_record` DISABLE KEYS */;
 /*!40000 ALTER TABLE `company_record` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `consumer`
---
-
-DROP TABLE IF EXISTS `consumer`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `consumer` (
-  `id` int(11) NOT NULL,
-  `version` int(11) NOT NULL,
-  `user_account_id` int(11) DEFAULT NULL,
-  `company` varchar(255) DEFAULT NULL,
-  `sector` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `FK_6cyha9f1wpj0dpbxrrjddrqed` (`user_account_id`),
-  CONSTRAINT `FK_6cyha9f1wpj0dpbxrrjddrqed` FOREIGN KEY (`user_account_id`) REFERENCES `user_account` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `consumer`
---
-
-LOCK TABLES `consumer` WRITE;
-/*!40000 ALTER TABLE `consumer` DISABLE KEYS */;
-/*!40000 ALTER TABLE `consumer` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -545,7 +516,7 @@ CREATE TABLE `hibernate_sequence` (
 
 LOCK TABLES `hibernate_sequence` WRITE;
 /*!40000 ALTER TABLE `hibernate_sequence` DISABLE KEYS */;
-INSERT INTO `hibernate_sequence` VALUES (7);
+INSERT INTO `hibernate_sequence` VALUES (12);
 /*!40000 ALTER TABLE `hibernate_sequence` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -599,9 +570,8 @@ CREATE TABLE `job` (
   `employer_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `UK_7jmfdvs0b0jx7i33qxgv22h7b` (`reference`),
-  KEY `IDXrr7tnj8h1bfv46pnsq6lwvxqd` (`deadline`,`final_mode`),
+  KEY `IDXrr7tnj8h1bfv46pnsq6lwvxqd` (`final_mode`,`deadline`),
   KEY `IDXt84ibbldao4ngscmvo7ja0es` (`final_mode`),
-  KEY `IDX8ix743uifflnrs9bupbn6y0h4` (`reference`),
   KEY `FK3rxjf8uh6fh2u990pe8i2at0e` (`employer_id`),
   CONSTRAINT `FK3rxjf8uh6fh2u990pe8i2at0e` FOREIGN KEY (`employer_id`) REFERENCES `employer` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -737,40 +707,6 @@ LOCK TABLES `non_commercial_banner` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `offer`
---
-
-DROP TABLE IF EXISTS `offer`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `offer` (
-  `id` int(11) NOT NULL,
-  `version` int(11) NOT NULL,
-  `deadline` datetime(6) DEFAULT NULL,
-  `max_reward_amount` double DEFAULT NULL,
-  `max_reward_currency` varchar(255) DEFAULT NULL,
-  `min_reward_amount` double DEFAULT NULL,
-  `min_reward_currency` varchar(255) DEFAULT NULL,
-  `moment` datetime(6) DEFAULT NULL,
-  `text` varchar(1024) DEFAULT NULL,
-  `ticker` varchar(255) DEFAULT NULL,
-  `title` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `UK_iex7e8fs0fh89yxpcnm1orjkm` (`ticker`),
-  KEY `IDXq2o9psuqfuqmq59f0sq57x9uf` (`deadline`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `offer`
---
-
-LOCK TABLES `offer` WRITE;
-/*!40000 ALTER TABLE `offer` DISABLE KEYS */;
-/*!40000 ALTER TABLE `offer` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `participation`
 --
 
@@ -797,66 +733,6 @@ CREATE TABLE `participation` (
 LOCK TABLES `participation` WRITE;
 /*!40000 ALTER TABLE `participation` DISABLE KEYS */;
 /*!40000 ALTER TABLE `participation` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `provider`
---
-
-DROP TABLE IF EXISTS `provider`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `provider` (
-  `id` int(11) NOT NULL,
-  `version` int(11) NOT NULL,
-  `user_account_id` int(11) DEFAULT NULL,
-  `company` varchar(255) DEFAULT NULL,
-  `sector` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `FK_b1gwnjqm6ggy9yuiqm0o4rlmd` (`user_account_id`),
-  CONSTRAINT `FK_b1gwnjqm6ggy9yuiqm0o4rlmd` FOREIGN KEY (`user_account_id`) REFERENCES `user_account` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `provider`
---
-
-LOCK TABLES `provider` WRITE;
-/*!40000 ALTER TABLE `provider` DISABLE KEYS */;
-/*!40000 ALTER TABLE `provider` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `request`
---
-
-DROP TABLE IF EXISTS `request`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `request` (
-  `id` int(11) NOT NULL,
-  `version` int(11) NOT NULL,
-  `deadline` datetime(6) DEFAULT NULL,
-  `moment` datetime(6) DEFAULT NULL,
-  `reward_amount` double DEFAULT NULL,
-  `reward_currency` varchar(255) DEFAULT NULL,
-  `text` varchar(1024) DEFAULT NULL,
-  `ticker` varchar(255) DEFAULT NULL,
-  `title` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `UK_9mxq3powq8tqctclj0fbi2nih` (`ticker`),
-  KEY `IDXlrvsw21ylkdqa1shrkwg1yssx` (`deadline`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `request`
---
-
-LOCK TABLES `request` WRITE;
-/*!40000 ALTER TABLE `request` DISABLE KEYS */;
-/*!40000 ALTER TABLE `request` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -954,6 +830,9 @@ CREATE TABLE `user_account` (
   `enabled` bit(1) NOT NULL,
   `identity_email` varchar(255) DEFAULT NULL,
   `identity_name` varchar(255) DEFAULT NULL,
+  `identity_phone_area_code` varchar(255) DEFAULT NULL,
+  `identity_phone_country_code` int(11) DEFAULT NULL,
+  `identity_phone_number` varchar(255) DEFAULT NULL,
   `identity_surname` varchar(255) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
   `username` varchar(255) DEFAULT NULL,
@@ -968,7 +847,7 @@ CREATE TABLE `user_account` (
 
 LOCK TABLES `user_account` WRITE;
 /*!40000 ALTER TABLE `user_account` DISABLE KEYS */;
-INSERT INTO `user_account` VALUES (1,0,_binary '\0','john.doe@acme.com','John','Doe','$2a$05$nrqfoXNpPgmY9NWMu/IBGul0uNZ2S2ibdjRPOi3wCGzzazmi/bFcG','anonymous'),(3,0,_binary '','administrator@acme.com','Administrator','Acme.com','$2a$05$qv3lteJdmtKxmt49uHgIN.1iwvE2lHH9Od.GFrKYYuJdZTSY.d9PO','administrator');
+INSERT INTO `user_account` VALUES (1,0,_binary '\0','john.doe@acme.com','John',NULL,NULL,NULL,'Doe','$2a$05$u5p3/ruZ7Uof1z99XaSX1OYwz7UK2EKFSu9qxtgE0tXlW/wR8oIIO','anonymous'),(3,0,_binary '','administrator@acme.com','Administrator',NULL,NULL,NULL,'Acme.com','$2a$05$dNZXS/zLDlOPUpzrufvdKebM9XsNmQuPkPlf.Kh4MZbB1a2g8UplS','administrator');
 /*!40000 ALTER TABLE `user_account` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -999,6 +878,10 @@ LOCK TABLES `worker` WRITE;
 /*!40000 ALTER TABLE `worker` DISABLE KEYS */;
 /*!40000 ALTER TABLE `worker` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Dumping events for database 'acme-jobs'
+--
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -1009,4 +892,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-12-18 18:16:38
+-- Dump completed on 2020-01-15 19:32:01
