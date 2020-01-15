@@ -43,10 +43,6 @@
        drop 
        foreign key `FKd0k52g7lcacefcp62kb4p9aor`;
 
-    alter table `consumer` 
-       drop 
-       foreign key FK_6cyha9f1wpj0dpbxrrjddrqed;
-
     alter table `duty` 
        drop 
        foreign key `FKs2uoxh4i5ya8ptyefae60iao1`;
@@ -82,10 +78,6 @@
     alter table `participation` 
        drop 
        foreign key `FKgddyc36rp2p6av1d3w529nf6e`;
-
-    alter table `provider` 
-       drop 
-       foreign key FK_b1gwnjqm6ggy9yuiqm0o4rlmd;
 
     alter table `sponsor` 
        drop 
@@ -123,8 +115,6 @@
 
     drop table if exists `company_record`;
 
-    drop table if exists `consumer`;
-
     drop table if exists `credit_card`;
 
     drop table if exists `customisation`;
@@ -145,13 +135,7 @@
 
     drop table if exists `non_commercial_banner`;
 
-    drop table if exists `offer`;
-
     drop table if exists `participation`;
-
-    drop table if exists `provider`;
-
-    drop table if exists `request`;
 
     drop table if exists `rodriguez_bulletin`;
 

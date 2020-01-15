@@ -33,8 +33,6 @@ master.menu.authenticated = Authenticated
 master.menu.authenticated.announcement.list = List announcements
 master.menu.authenticated.companyRecord.list = List company records
 master.menu.authenticated.investorRecord.list = List investor records
-master.menu.authenticated.request.list = List requests
-master.menu.authenticated.offer.list = List offers
 master.menu.authenticated.challenge.list = List challenges
 master.menu.authenticated.job.list = List jobs
 master.menu.authenticated.messageThread.list = List message threads
@@ -77,18 +75,6 @@ master.menu.administrator.dashboard.form = Display dashboard
 master.menu.administrator.chart.form = Display charts
 master.menu.administrator.shutdown = Shut down
 
-# master.menu.provider ########################################################
-
-master.menu.provider = Provider
-master.menu.provider.favourite-link = Favourite link
-master.menu.provider.request.create = Create request
-
-# master.menu.consumer ##########################################################
-
-master.menu.consumer = Consumer
-master.menu.consumer.favourite-link = Favourite link
-master.menu.consumer.offer.create = Create offer
-
 # master.menu.employer ##########################################################
 
 master.menu.employer = Employer
@@ -123,10 +109,6 @@ master.menu.sponsor.creditCard.form = Show credit card
 
 master.menu.user-account = Account
 master.menu.user-account.general-data = General data
-master.menu.user-account.provider = Provider data
-master.menu.user-account.become-provider = Become a provider
-master.menu.user-account.consumer = Consumer data
-master.menu.user-account.become-consumer = Become a consumer
 master.menu.user-account.become-employer = Become an employer
 master.menu.user-account.employer = Employer data
 master.menu.user-account.become-worker = Become a worker

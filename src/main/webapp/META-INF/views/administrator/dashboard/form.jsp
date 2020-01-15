@@ -20,16 +20,6 @@
 	<acme:form-integer code="administrator.dashboard.form.label.numberCompanyRecords" path="numberCompanyRecords"/>
 	<acme:form-integer code="administrator.dashboard.form.label.numberInvestorRecords" path="numberInvestorRecords"/>
 	
-	<acme:form-double code="administrator.dashboard.form.label.minimumNumberOfRewardsOfActiveRequests" path="minimumNumberOfRewardsOfActiveRequests"/>
-	<acme:form-double code="administrator.dashboard.form.label.maximumNumberOfRewardsOfActiveRequests" path="maximumNumberOfRewardsOfActiveRequests"/>
-	<acme:form-double code="administrator.dashboard.form.label.averageNumberOfRewardsOfActiveRequests" path="averageNumberOfRewardsOfActiveRequests"/>
-	<acme:form-double code="administrator.dashboard.form.label.standardDesviationNumberOfRewardsOfActiveRequests" path="standardDesviationNumberOfRewardsOfActiveRequests"/>
-	
-	<acme:form-double code="administrator.dashboard.form.label.minimumNumberOfRewardsOfActiveOffers" path="minimumNumberOfRewardsOfActiveOffers"/>	
-	<acme:form-double code="administrator.dashboard.form.label.maximumNumberOfRewardsOfActiveOffers" path="maximumNumberOfRewardsOfActiveOffers"/>
-	<acme:form-double code="administrator.dashboard.form.label.averageNumberOfRewardsOfActiveOffers" path="averageNumberOfRewardsOfActiveOffers"/>
-	<acme:form-double code="administrator.dashboard.form.label.standardDesviationNumberOfRewardsOfActiveOffers" path="standardDesviationNumberOfRewardsOfActiveOffers"/>
-	
 	<acme:form-double code="administrator.dashboard.form.label.averageNumberOfJobsPerEmployer" path="averageNumberOfJobsPerEmployer"/>
 	<acme:form-double code="administrator.dashboard.form.label.averageNumberOfApplicationsPerEmployer" path="averageNumberOfApplicationsPerEmployer"/>
 	<acme:form-double code="administrator.dashboard.form.label.averageNumberOfApplicationsPerWorker" path="averageNumberOfApplicationsPerWorker"/>	

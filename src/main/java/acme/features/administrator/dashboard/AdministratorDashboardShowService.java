@@ -1,10 +1,6 @@
 
 package acme.features.administrator.dashboard;
 
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -38,9 +34,7 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "numberAnnouncements", "numberCompanyRecords", "numberInvestorRecords", "minimumNumberOfRewardsOfActiveRequests", "maximumNumberOfRewardsOfActiveRequests", "averageNumberOfRewardsOfActiveRequests",
-			"standardDesviationNumberOfRewardsOfActiveRequests", "minimumNumberOfRewardsOfActiveOffers", "maximumNumberOfRewardsOfActiveOffers", "averageNumberOfRewardsOfActiveOffers", "standardDesviationNumberOfRewardsOfActiveOffers",
-			"averageNumberOfJobsPerEmployer", "averageNumberOfApplicationsPerEmployer", "averageNumberOfApplicationsPerWorker");
+		request.unbind(entity, model, "numberAnnouncements", "numberCompanyRecords", "numberInvestorRecords", "averageNumberOfJobsPerEmployer", "averageNumberOfApplicationsPerEmployer", "averageNumberOfApplicationsPerWorker");
 
 	}
 
@@ -49,22 +43,9 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		assert request != null;
 		Dashboard result = new Dashboard();
 
-		Calendar c = new GregorianCalendar();
-		Date d = c.getTime();
-
 		result.setNumberAnnouncements(this.repository.numberAnnouncements());
 		result.setNumberCompanyRecords(this.repository.numberCompanyRecords());
 		result.setNumberInvestorRecords(this.repository.numberInvestorRecords());
-
-		result.setMinimumNumberOfRewardsOfActiveRequests(this.repository.minimumNumberOfRewardsOfActiveRequests(d));
-		result.setMaximumNumberOfRewardsOfActiveRequests(this.repository.maximumNumberOfRewardsOfActiveRequests(d));
-		result.setAverageNumberOfRewardsOfActiveRequests(this.repository.averageNumberOfRewardsOfActiveRequests(d));
-		result.setStandardDesviationNumberOfRewardsOfActiveRequests(this.repository.standardDesviationNumberOfRewardsOfActiveRequests(d));
-
-		result.setMinimumNumberOfRewardsOfActiveOffers(this.repository.minimumNumberOfRewardsOfActiveOffers(d));
-		result.setMaximumNumberOfRewardsOfActiveOffers(this.repository.maximumNumberOfRewardsOfActiveOffers(d));
-		result.setAverageNumberOfRewardsOfActiveOffers(this.repository.averageNumberOfRewardsOfActiveOffers(d));
-		result.setStandardDesviationNumberOfRewardsOfActiveOffers(this.repository.standardDesviationNumberOfRewardsOfActiveOffers(d));
 
 		result.setAverageNumberOfJobsPerEmployer(this.repository.averageNumberOfJobsPerEmployer());
 		result.setAverageNumberOfApplicationsPerEmployer(this.repository.averageNumberOfApplicationsPerEmployer());

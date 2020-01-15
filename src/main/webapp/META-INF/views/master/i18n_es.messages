@@ -33,8 +33,6 @@ master.menu.authenticated = Autenticado
 master.menu.authenticated.announcement.list = Listar anuncios
 master.menu.authenticated.companyRecord.list = Listar registros de compañías
 master.menu.authenticated.investorRecord.list = Listar registros de inversores
-master.menu.authenticated.request.list = Listar solicitudes
-master.menu.authenticated.offer.list = Listar ofertas
 master.menu.authenticated.challenge.list = Listar retos
 master.menu.authenticated.job.list = Listar trabajos
 master.menu.authenticated.messageThread.list = Listar hilos de mensaje
@@ -77,18 +75,6 @@ master.menu.administrator.dashboard.form = Mostrar tablero de estadísticas
 master.menu.administrator.chart.form = Mostrar gráficos
 master.menu.administrator.shutdown = Parar el sistema
 
-# master.menu.provider ########################################################
-
-master.menu.provider = Proveedor
-master.menu.provider.favourite-link = Enlace favorito
-master.menu.provider.request.create = Crear solicitud
-
-# master.menu.consumer ##########################################################
-
-master.menu.consumer = Consumidor
-master.menu.consumer.favourite-link = Enlace favorito
-master.menu.consumer.offer.create = Crear oferta
-
 # master.menu.employer ##########################################################
 
 master.menu.employer = Empleador
@@ -123,10 +109,6 @@ master.menu.sponsor.creditCard.form = Mostrar tarjeta de credito
 
 master.menu.user-account = Cuenta
 master.menu.user-account.general-data = Datos generales
-master.menu.user-account.provider = Datos de proveedor
-master.menu.user-account.become-provider = Hazte proveedor
-master.menu.user-account.consumer = Datos de consumidor
-master.menu.user-account.become-consumer = Hazte consumidor
 master.menu.user-account.become-employer = Hazte empleador
 master.menu.user-account.employer = Datos del empleador
 master.menu.user-account.become-worker = Hazte trabajador

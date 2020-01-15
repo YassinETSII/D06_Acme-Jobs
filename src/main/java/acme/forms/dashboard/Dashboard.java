@@ -20,16 +20,6 @@ public class Dashboard implements Serializable {
 	Integer						numberCompanyRecords;
 	Integer						numberInvestorRecords;
 
-	Double						minimumNumberOfRewardsOfActiveRequests;
-	Double						maximumNumberOfRewardsOfActiveRequests;
-	Double						averageNumberOfRewardsOfActiveRequests;
-	Double						standardDesviationNumberOfRewardsOfActiveRequests;
-
-	Double						minimumNumberOfRewardsOfActiveOffers;
-	Double						maximumNumberOfRewardsOfActiveOffers;
-	Double						averageNumberOfRewardsOfActiveOffers;
-	Double						standardDesviationNumberOfRewardsOfActiveOffers;
-
 	Double						averageNumberOfJobsPerEmployer;
 	Double						averageNumberOfApplicationsPerEmployer;
 	Double						averageNumberOfApplicationsPerWorker;
